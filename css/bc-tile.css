@@ -1,6 +1,7 @@
 .bc-tile {
     width: calc(100% - 40px);
-    height: max-content;
+    height: calc((100vw / 4) * 1.2);
+    max-height: 620px;
     padding: 6px 6px 16px 6px;
     border-radius: var(--border-radius);
     display: flex;
@@ -12,14 +13,16 @@
 
 .bc-img-container {
     position: relative;
-    height: 360px;
+    height: 80%;
     overflow: hidden;
+    cursor: pointer;
 }
 .bc-img-container img {
     width: 100%;
-    height: inherit;
+    height: 100%;
     display: block;
     border-radius: var(--border-radius);
+    object-fit: cover;
 }
 
 .bc-img-content {

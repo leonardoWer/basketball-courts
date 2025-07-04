@@ -15,6 +15,12 @@
     .bc-tile {
         width: calc((100% / 3) - 40px); /* 3 плитки в строке */
     }
+    .tile-label {
+        font-size: 0.9rem;
+    }
+    .tile-type-text {
+        font-size: 0.8rem;
+    }
 }
 
 /* Для очень больших экранов (большие десктопы) */

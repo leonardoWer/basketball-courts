@@ -1,52 +1,73 @@
-/* Диагональное движение (слева снизу вправо вниз) */
+/* Диагональное движение (слева сверху вправо вниз) */
 @keyframes flyDiagonal {
     0% {
-        transform: translate(-100px, -100px); /* За пределами верхнего левого угла */
+        transform: translate(0, 0);
     }
     100% {
-        transform: translate(calc(100vw + 100px), calc(100vh + 100px)); /* За пределами нижнего правого угла */
+        transform: translate(calc(100vw), calc(100vh));
     }
 }
 
 /* Горизонтальное движение (слева направо) */
 @keyframes flyHorizontal {
     0% {
-        transform: translateX(-100px); /* За пределами левого края */
+        transform: translateX(0);
     }
     100% {
-        transform: translateX(calc(100vw + 100px)); /* За пределами правого края */
+        transform: translateX(100vw);
     }
 }
 
 /* Вертикальное движение (снизу вверх) */
 @keyframes flyVertical {
     0% {
-        transform: translateY(calc(100vh + 100px)); /* За пределами нижнего края */
+        transform: translateY(-100px);
     }
     100% {
-        transform: translateY(-100px); /* За пределами верхнего края */
+        transform: translateY(100vh); /* За границу верха экрана */
     }
 }
 
 /* Диагональное движение в обратном направлении (справа сверху влево вниз) */
 @keyframes flyDiagonalReverse {
     0% {
-        transform: translate(calc(100vw + 100px), -100px); /* За пределами верхнего правого угла */
+        transform: translate(0, 0);
     }
     100% {
-        transform: translate(-100px, calc(100vh + 100px)); /* За пределами нижнего левого угла */
+        transform: translate(calc(-100vw), calc(100vh));
     }
 }
 
 /* Зигзагообразное движение */
 @keyframes flyZigzag {
     0% {
-        transform: translate(-100px, -100px); /* За пределами верхнего левого угла */
+        transform: translate(0, 0);
     }
     50% {
-        transform: translate(calc(100vw / 2), calc(50vh / 2));
+        transform: translate(calc(100vw - 50px), calc(50vh - 50px));
     }
     100% {
-        transform: translate(calc(100vw + 100px), calc(100vh + 100px)); /* Конечная позиция диагонально вниз*/
+        transform: translate(0, calc(100vh - 100px));
+    }
+}
+
+@keyframes flyCircle {
+    0% {
+        transform: translate(100vh);
+    }
+    50% {
+        transform: translate(50vh);
+    }
+    100% {
+        transform: translate(-100px);
+    }
+}
+
+@keyframes rotation {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
     }
 }
