@@ -6,7 +6,7 @@
 /* Общие параметры */
 
 body {
-    background-color: var(--gray-background);
+    background-color: var(--white-background);
     font-family: "Inter_Regular", sans-serif;
 }
 
@@ -33,7 +33,7 @@ body {
     align-items: center;
 }
 .top-line-logo-img {
-    max-width: 48px;
+    width: 44px;
     height: auto;
     opacity: 0.9;
 }
@@ -66,11 +66,15 @@ body {
 /* Основная часть */
 /* Шапка */
 
+.header-section {
+    background-color: var(--gray-background);
+}
 .header-container {
     position: relative;
+    height: 100vh;
+    max-width: 3200px;
     display: flex;
     align-items: center;
-    height: 100vh;
     overflow: hidden;
 }
 
@@ -85,6 +89,7 @@ body {
 .header-img {
     position: absolute;
     bottom: 0;
+    z-index: 10;
 }
 .header-img img {
     width: 100%;
@@ -93,7 +98,7 @@ body {
 }
 .background-text {
     font-family: "Inter_Bold", sans-serif;
-    font-size: 16rem;
+    font-size: 10rem;
     color: var(--white-gray-text);
     position: absolute;
     top: 0;
@@ -103,11 +108,11 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
-    z-index: -1;
     pointer-events: none;
     user-select: none;
     overflow: hidden;
     word-break: break-all;
+    z-index: 1;
 }
 
 
@@ -126,8 +131,8 @@ body {
 .title-text {
     font-family: "Inter_Bold", sans-serif;
     color: var(--dark-gray-text);
-    font-size: 8rem;
-    line-height: 7rem;
+    font-size: 5rem;
+    line-height: 4.8rem;
 }
 .description-text {
     font-family: "Inter_Regular", sans-serif;
@@ -137,10 +142,65 @@ body {
 }
 
 /* Площадки */
-.courts-container {
+.basketball-courts-section {
+    margin-top: 4%;
+    position: relative;
+}
+.court-tiles-container {
+    margin: 0 auto;
+    padding: 0 4%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    max-width: 1920px;
+}
+
+.balls-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
     background-color: var(--white-background);
-    min-height: 100vh;
+    z-index: -1;
+}
+
+.bg-ball {
+    position: absolute;
+    width: 20%;
+    height: 20%;
+    object-fit: contain;
+    filter: blur(8px);
+}
+.ball-1 {
+    top: calc(100% - 60% / 2);
+    left: calc(100% - 60% / 2);
+    animation: flyDiagonal 12s linear infinite;
+}
+.ball-2 {
+    top: 35%;
+    left: calc(100% - 60% / 2);
+    animation: flyHorizontal 15s linear infinite;
+}
+.ball-3 {
+    top: 20%;
+    left: 10%;
+    animation: flyVertical 10s linear infinite;
+}
+.ball-4 {
+    top: calc(100% - 60% / 3);
+    bottom: calc(100% - 60% / 3);
+    animation: flyDiagonalReverse 13s linear infinite;
+}
+.ball-5 {
+    top: 10%;
+    left: 50%;
+    animation: flyZigzag 11s linear infinite;
 }
 
 /* Футер */
-
+footer {
+    background-color: var(--gray-background);
+    min-height: 20vh;
+}

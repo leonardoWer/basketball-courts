@@ -1,0 +1,52 @@
+/* Диагональное движение (слева снизу вправо вниз) */
+@keyframes flyDiagonal {
+    0% {
+        transform: translate(-100px, -100px); /* За пределами верхнего левого угла */
+    }
+    100% {
+        transform: translate(calc(100vw + 100px), calc(100vh + 100px)); /* За пределами нижнего правого угла */
+    }
+}
+
+/* Горизонтальное движение (слева направо) */
+@keyframes flyHorizontal {
+    0% {
+        transform: translateX(-100px); /* За пределами левого края */
+    }
+    100% {
+        transform: translateX(calc(100vw + 100px)); /* За пределами правого края */
+    }
+}
+
+/* Вертикальное движение (снизу вверх) */
+@keyframes flyVertical {
+    0% {
+        transform: translateY(calc(100vh + 100px)); /* За пределами нижнего края */
+    }
+    100% {
+        transform: translateY(-100px); /* За пределами верхнего края */
+    }
+}
+
+/* Диагональное движение в обратном направлении (справа сверху влево вниз) */
+@keyframes flyDiagonalReverse {
+    0% {
+        transform: translate(calc(100vw + 100px), -100px); /* За пределами верхнего правого угла */
+    }
+    100% {
+        transform: translate(-100px, calc(100vh + 100px)); /* За пределами нижнего левого угла */
+    }
+}
+
+/* Зигзагообразное движение */
+@keyframes flyZigzag {
+    0% {
+        transform: translate(-100px, -100px); /* За пределами верхнего левого угла */
+    }
+    50% {
+        transform: translate(calc(100vw / 2), calc(50vh / 2));
+    }
+    100% {
+        transform: translate(calc(100vw + 100px), calc(100vh + 100px)); /* Конечная позиция диагонально вниз*/
+    }
+}

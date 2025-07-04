@@ -9,6 +9,9 @@
     --orange: #FFAE42;
     --light-orange: #FF8243;
 
+    --linear-gradient-gray: linear-gradient(to bottom, var(--gray-text) 0%, var(--light-gray-text) 50%, var(--gray-background) 100%);
+    --linear-gradient-gray-orange: linear-gradient(to bottom, var(--gray-text) 0%, var(--light-gray-text) 50%, var(--light-orange) 100%);
+
 
     --border-radius: 16px;
 
