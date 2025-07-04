@@ -1,0 +1,15 @@
+:root {
+
+    --gray-background: #dfdfdf;
+    --white-background: #ebebeb;
+    --white-gray-text: #ebebeb;
+    --light-gray-text: #d1d1d1;
+    --gray-text: #b4b4b4;
+    --dark-gray-text: #3c3c3c;
+    --orange: #FFAE42;
+    --light-orange: #FF8243;
+
+
+    --border-radius: 16px;
+
+}
