@@ -6,6 +6,7 @@
     --light-gray-text: #d1d1d1;
     --gray-text: #b4b4b4;
     --dark-gray-text: #3c3c3c;
+    --dark-gray-rgb: rgba(60, 60, 60, 0.9);
     --orange: #FFAE42;
     --light-orange: #FF8243;
 
@@ -15,4 +16,11 @@
 
     --border-radius: 16px;
 
+}
+
+::selection {
+    /*background-color: var(--dark-gray-rgb);*/
+    /*color: var(--white-gray-text);*/
+    background-color: var(--light-orange);
+    color: var(--dark-gray-text);
 }

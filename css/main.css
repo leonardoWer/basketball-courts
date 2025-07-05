@@ -44,7 +44,7 @@ body {
     flex: 1 1 0;
 }
 .top-menu {
-    background: var(--dark-gray-text);
+    background: var(--dark-gray-rgb);
     border-radius: var(--border-radius);
     padding: 16px 12px;
 }
@@ -63,6 +63,9 @@ body {
     color: var(--dark-gray-text);
     font-family: Inter_Bold, sans-serif;
     padding: 12px 24px;
+}
+.fa {
+    margin-right: 4px;
 }
 
 /* Основная часть */
@@ -97,7 +100,10 @@ body {
     width: 100%;
     height: auto;
     display: block;
+    transition: all .2s;
+    animation: scaleFadeIn 0.8s ease-in;
 }
+
 .background-text {
     font-family: "Inter_Bold", sans-serif;
     font-size: 10rem;
@@ -115,6 +121,9 @@ body {
     overflow: hidden;
     word-break: break-all;
     z-index: 1;
+}
+.text-fade {
+    animation: fallDown 2s ease-in;
 }
 
 
@@ -215,4 +224,30 @@ body {
 footer {
     background-color: var(--gray-background);
     min-height: 20vh;
+}
+
+
+.custom-cursor {
+    position: fixed;
+    width: 50px;
+    height: 50px;
+    opacity: 0.9;
+    background: url("../assets/img/logo/basketball-courts-logo.png") no-repeat center center;
+    background-size: cover;
+    border-radius: 50%;
+    pointer-events: none;
+    transform: translate(-50%, -50%);
+    z-index: 9999;
+    transition: width 0.1s ease, height 0.1s ease;
+    animation: rotateBall 1s linear infinite;
+}
+.custom-cursor.idle {
+    animation-play-state: paused;
+    transform: translate(-50%, -50%) rotate(0deg);
+}
+.custom-cursor.clicked {
+    width: 30px;
+    height: 30px;
+    animation: jumpBall 0.5s ease-in-out infinite;
+    opacity: 0.99;
 }

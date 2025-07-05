@@ -71,3 +71,53 @@
         transform: rotate(360deg);
     }
 }
+@keyframes rotateBall {
+    0% {
+        transform: translate(-50%, -50%) rotate(0deg);
+    }
+    100% {
+        transform: translate(-50%, -50%) rotate(360deg);
+    }
+}
+@keyframes jumpBall {
+    0% {
+        transform: translate(-50%, -50%) translateY(0);
+    }
+    50% {
+        transform: translate(-50%, -50%) translateY(-15px);
+    }
+    100% {
+        transform: translate(-50%, -50%) translateY(0);
+    }
+}
+
+/* Страница */
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+@keyframes scaleFadeIn {
+    0% {
+        transform: scale(1.05);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+@keyframes fallDown {
+    0% {
+        color: var(--gray-background);
+    }
+    40% {
+        transform: translateX(-16px);
+    }
+    100% {
+        transform: translateY(100vh);
+    }
+}
