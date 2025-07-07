@@ -10,8 +10,8 @@
         "1234.png"
       ],
       "description" : "",
-      "type" : "outdoor",
-      "cost" : "free"
+      "type" : "открытая",
+      "cost" : "Бесплатно"
     },
     {
       "id" : 2,
@@ -23,60 +23,8 @@
         "1234.png"
       ],
       "description" : "Родная школа",
-      "type" : "outdoor",
-      "cost" : "free"
-    },
-    {
-      "id" : 1,
-      "address" : "Парк Город Мастеров",
-      "geolocation" : 123.123,
-      "cover_photo" : "bc-1.jpg",
-      "photos" : [
-        "123.png",
-        "1234.png"
-      ],
-      "description" : "",
-      "type" : "outdoor",
-      "cost" : "free"
-    },
-    {
-      "id" : 2,
-      "address" : "Школа 599(600к2)",
-      "geolocation" : 123.124,
-      "cover_photo" : "bc-1.jpg",
-      "photos" : [
-        "123.png",
-        "1234.png"
-      ],
-      "description" : "Родная школа",
-      "type" : "outdoor",
-      "cost" : "free"
-    },
-    {
-      "id" : 1,
-      "address" : "Парк Город Мастеров",
-      "geolocation" : 123.123,
-      "cover_photo" : "bc-1.jpg",
-      "photos" : [
-        "123.png",
-        "1234.png"
-      ],
-      "description" : "",
-      "type" : "outdoor",
-      "cost" : "free"
-    },
-    {
-      "id" : 2,
-      "address" : "Школа 599(600к2)",
-      "geolocation" : 123.124,
-      "cover_photo" : "bc-1.jpg",
-      "photos" : [
-        "123.png",
-        "1234.png"
-      ],
-      "description" : "Родная школа",
-      "type" : "outdoor",
-      "cost" : "free"
+      "type" : "открытая",
+      "cost" : "Бесплатно"
     }
   ]
 }
