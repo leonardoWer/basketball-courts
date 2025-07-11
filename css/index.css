@@ -35,6 +35,16 @@
     background: var(--dark-gray-rgb);
     border-radius: var(--border-radius);
     padding: 16px 12px;
+    transition: all 0.8s;
+    opacity: 0;
+}
+.top-menu.active {
+    opacity: 1;
+    animation: topMenuIn 1s ease-in-out;
+}
+.top-menu.hidden {
+    opacity: 0;
+    animation: topMenuOut 1.2s ease-in-out;
 }
 .top-menu ul {
     display: flex;

@@ -53,6 +53,7 @@ body {
     z-index: 1;
 }
 
+
 .fade-in-text {
     transform: translateX(-20px) scale(0.95);
     transition: opacity 1s linear, transform 1s ease;
