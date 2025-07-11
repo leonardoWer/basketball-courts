@@ -4,7 +4,6 @@
 @import url(./variables.css);
 
 /* Общие параметры */
-
 body {
     background-color: var(--white-background);
     font-family: "Inter_Regular", sans-serif;
@@ -13,6 +12,31 @@ body {
 .fa {
     margin-right: 4px;
     scale: 0.9;
+}
+
+.custom-cursor {
+    position: fixed;
+    width: 50px;
+    height: 50px;
+    opacity: 0.9;
+    background: url("../assets/img/logo/basketball-courts-logo.png") no-repeat center center;
+    background-size: cover;
+    border-radius: 50%;
+    pointer-events: none;
+    transform: translate(-50%, -50%);
+    z-index: 9999;
+    transition: width 0.1s ease, height 0.1s ease;
+    animation: rotateBall 1s linear infinite;
+}
+.custom-cursor.idle {
+    animation-play-state: paused;
+    transform: translate(-50%, -50%) rotate(0deg);
+}
+.custom-cursor.clicked {
+    width: 30px;
+    height: 30px;
+    animation: jumpBall 0.5s ease-in-out infinite;
+    opacity: 0.99;
 }
 
 /* Верхнее меню */
@@ -117,6 +141,15 @@ body {
     z-index: 1;
 }
 
+.logo-text {
+    font-family: "Inter_Bold", sans-serif;
+    color: var(--light-orange);
+    font-size: 1.5rem;
+    line-height: 1.5rem;
+    margin-left: 2px;
+    box-shadow: var(--top-box-shadow);
+}
+
 
 .fade-in-text {
     transform: translateX(-20px) scale(0.95);
@@ -163,31 +196,43 @@ body {
 /* Футер */
 footer {
     background-color: var(--gray-background);
-    min-height: 20vh;
+    padding-top: 16vh;
+    text-align: center;
 }
 
+.bottom-line {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    margin: 0 auto;
+    padding: 2rem 4rem;
+}
 
-.custom-cursor {
-    position: fixed;
-    width: 50px;
-    height: 50px;
+.bottom-line__left {
+    display: flex;
+    align-items: center;
+}
+.bottom-line-logo-img {
+    width: 2rem;
+    height: auto;
+    line-height: 1.5rem;
     opacity: 0.9;
-    background: url("../assets/img/logo/basketball-courts-logo.png") no-repeat center center;
-    background-size: cover;
-    border-radius: 50%;
-    pointer-events: none;
-    transform: translate(-50%, -50%);
-    z-index: 9999;
-    transition: width 0.1s ease, height 0.1s ease;
-    animation: rotateBall 1s linear infinite;
 }
-.custom-cursor.idle {
-    animation-play-state: paused;
-    transform: translate(-50%, -50%) rotate(0deg);
+
+.bottom-line__right {
+    display: flex;
+    align-items: center;
 }
-.custom-cursor.clicked {
-    width: 30px;
-    height: 30px;
-    animation: jumpBall 0.5s ease-in-out infinite;
-    opacity: 0.99;
+.bottom-line__right ul {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+}
+.bottom-line__right li {
+    margin: 8px 20px;
+    letter-spacing: 0.5px;
+}
+.bottom-line__right li:first-child {
+    font-family: Inter_Bold, sans-serif;
 }

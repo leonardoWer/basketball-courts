@@ -15,7 +15,8 @@
     --linear-gradient-gray-orange: linear-gradient(to bottom, var(--gray-text) 0%, var(--light-gray-text) 50%, var(--light-orange) 100%);
 
     /* Тени */
-    --vertical-box-shadow: 0 -20px 20px -20px rgba(0, 0, 0, 0.2);
+    --top-box-shadow: 0 -20px 20px -20px rgba(0, 0, 0, 0.2);
+    --bottom-box-shadow: 0 20px 20px -20px rgba(0, 0, 0, 0.2);
 
     /* Радиусы */
     --border-radius: 16px;

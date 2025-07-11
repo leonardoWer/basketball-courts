@@ -76,7 +76,7 @@
 /* Площадки */
 .basketball-courts-section {
     position: relative;
-    box-shadow: var(--vertical-box-shadow);
+    box-shadow: var(--top-box-shadow), var(--bottom-box-shadow);
 }
 .court-tiles-container {
     margin: 0 auto;
