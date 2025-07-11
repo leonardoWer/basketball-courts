@@ -1,5 +1,6 @@
 document.addEventListener("DOMContentLoaded", function () {
     initCustomCursor();
+    initFadeInText();
 });
 
 
@@ -25,15 +26,17 @@ function initCustomCursor() {
         clearTimeout(timeoutId);
 
         // Запускаем таймер, чтобы через некоторое время добавить класс "idle"
-        timeoutId = setTimeout(function() {
+        timeoutId = setTimeout(function () {
             mouseMoving = false;
             customCursor.classList.add('idle');
         }, 100);
     }
+
     function addClickEffect() {
         customCursor.classList.remove('idle');
         customCursor.classList.add('clicked');
     }
+
     function removeClickEffect() {
         customCursor.classList.remove('clicked');
         // Если мышь не движется, добавим класс idle сразу после отпускания кнопки
@@ -46,6 +49,17 @@ function initCustomCursor() {
     document.addEventListener('mousemove', moveCursor);
     document.addEventListener('mousedown', addClickEffect);
     document.addEventListener('mouseup', removeClickEffect);
+}
+
+function initFadeInText() {
+    const elements = document.querySelectorAll('.fade-in-text');
+
+    // Для каждого элемента добавляем класс 'active' после небольшой задержки
+    elements.forEach(function (element, index) {
+        setTimeout(function () {
+            element.classList.add('active');
+        }, index * 200);
+    });
 }
 
 

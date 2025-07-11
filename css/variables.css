@@ -1,5 +1,5 @@
 :root {
-
+    /* Цвета */
     --gray-background: #dfdfdf;
     --white-background: #ebebeb;
     --white-gray-text: #ebebeb;
@@ -10,14 +10,19 @@
     --orange: #FFAE42;
     --light-orange: #FF8243;
 
+    /* Градиенты */
     --linear-gradient-gray: linear-gradient(to bottom, var(--gray-text) 0%, var(--light-gray-text) 50%, var(--gray-background) 100%);
     --linear-gradient-gray-orange: linear-gradient(to bottom, var(--gray-text) 0%, var(--light-gray-text) 50%, var(--light-orange) 100%);
 
+    /* Тени */
+    --vertical-box-shadow: 0 -20px 20px -20px rgba(0, 0, 0, 0.2);
 
+    /* Радиусы */
     --border-radius: 16px;
 
 }
 
+/* Выделение мыши */
 ::selection {
     /*background-color: var(--dark-gray-rgb);*/
     /*color: var(--white-gray-text);*/

@@ -1,0 +1,194 @@
+/* Верхнее меню */
+
+.header-top {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    padding: 15px 30px 0 30px;
+    z-index: 1000;
+}
+
+.top-line {
+    display: flex;
+    align-items: center;
+    gap: 50px;
+}
+
+.top-line__left {
+    display: flex;
+    align-items: center;
+}
+.top-line-logo-img {
+    width: 44px;
+    height: auto;
+    opacity: 0.9;
+}
+
+.top-line__center {
+    display: flex;
+    justify-content: center;
+    flex: 1 1 0;
+}
+.top-menu {
+    background: var(--dark-gray-rgb);
+    border-radius: var(--border-radius);
+    padding: 16px 12px;
+}
+.top-menu ul {
+    display: flex;
+    gap: 4px
+}
+.top-menu a {
+    color: var(--light-gray-text);
+    border-radius: var(--border-radius);
+    padding: 12px 16px;
+    transition: all 0.3s linear;
+}
+.top-menu a:hover {
+    background-color: var(--light-orange);
+    color: var(--dark-gray-text);
+    font-family: Inter_Bold, sans-serif;
+    padding: 12px 24px;
+}
+
+/* Основная часть */
+/* Шапка */
+
+.header-section {
+    background-color: var(--gray-background);
+}
+.header-container {
+    position: relative;
+    height: 100vh;
+    max-width: 3200px;
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+}
+
+.header__left {
+    width: 40%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.header-img {
+    position: absolute;
+    bottom: 0;
+    z-index: 10;
+}
+.header-img img {
+    width: 100%;
+    height: auto;
+    display: block;
+    transition: scale 0.8s;
+}
+
+.header__left-slide-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: inherit;
+    height: 100%;
+    background-color: var(--white-background);
+    transition: all 0.8s;
+    animation: slideLeft 1.6s ease-in forwards;
+}
+
+
+.header__right {
+    width: 60%;
+    padding: 40px;
+}
+
+.hr-text-container {
+    position: absolute;
+    top: 25%;
+    right: 10%;
+    max-width: 36%;
+}
+
+.header__scroll-bg {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 10;
+    background-color: rgba(0, 0, 0, 0.8);
+    opacity: 0;
+    transition: opacity 0.1s linear;
+}
+
+
+/* Площадки */
+.basketball-courts-section {
+    position: relative;
+    box-shadow: var(--vertical-box-shadow);
+}
+.court-tiles-container {
+    margin: 0 auto;
+    padding: 4%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    max-width: 3200px;
+}
+
+.balls-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    background-color: var(--white-background);
+    z-index: -1;
+}
+.bg-ball {
+    position: absolute;
+    width: 20%;
+    height: 20%;
+    object-fit: contain;
+    filter: blur(8px);
+    opacity: 0.8;
+    transition: transform 0.5s ease-in-out;
+}
+.ball-1 {
+    top: calc(100% - 60% / 2);
+    left: calc(100% - 60% / 2);
+    animation: flyDiagonal 12s linear infinite;
+}
+.ball-2 {
+    top: 35%;
+    left: calc(100% - 60% / 2);
+    animation: flyHorizontal 15s linear infinite;
+}
+.ball-3 {
+    top: 20%;
+    left: 10%;
+    animation: flyVertical 8s linear infinite;
+}
+.ball-4 {
+    top: calc(100% - 60% / 3);
+    bottom: calc(100% - 60% / 3);
+    animation: flyDiagonalReverse 13s linear infinite;
+}
+.ball-5 {
+    top: 10%;
+    left: 50%;
+    animation: flyZigzag 11s linear infinite;
+}
+.ball-6 {
+    bottom: -100px;
+    right: -100px;
+    animation: flyCircle 8s linear infinite, flyVertical 6s linear infinite;;
+}
+.ball-7 {
+    top: -100px;
+    left: 40%;
+    animation: flyVertical 12s linear infinite;
+}
