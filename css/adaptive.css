@@ -1,19 +1,21 @@
+/* max-width - ширина <= x */
+/* min-width - ширина >= x */
+
 /* Для маленьких экранов (телефоны landscape, маленькие планшеты) */
-@media (min-width: 576px) {
+@media (max-width: 575.98px) {
     .bc-tile {
         width: calc((100% / 2) - 40px); /* 2 плитки в строке */
     }
+
 }
 
 /* Для средних экранов (планшеты) */
-@media (min-width: 768px) {
-    .footer-top-line {
-        flex-direction: row;
-    }
+@media (min-width: 576px) {
+
 }
 
 /* Для больших экранов (небольшие десктопы, лаптопы) */
-@media (min-width: 992px) {
+@media (min-width: 768px) {
     .bc-tile {
         width: calc((100% / 3) - 40px); /* 3 плитки в строке */
     }
@@ -23,10 +25,14 @@
     .tile-type-text {
         font-size: 0.8rem;
     }
+
+    .footer-top-line {
+        flex-direction: row;
+    }
 }
 
 /* Для очень больших экранов (большие десктопы) */
-@media (min-width: 1200px) {
+@media (min-width: 992px) {
     .header-img img {
         width: calc(100% * 1.5);
     }

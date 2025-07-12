@@ -195,20 +195,19 @@ footer {
 }
 .footer-bg {
     position: relative;
-    width: 98%;
+    width: 96vw;
     height: 70vh;
     border-radius: var(--border-radius);
     background-color: var(--gray-background);
     margin: 0 auto;
 }
 
-
 .footer-top-line {
     display: flex;
     flex-direction: column;
+    margin: 0 8vw;
     justify-content: center;
     gap: 8vw;
-    margin: 0 auto;
     padding: 10vh 0 0 0;
 }
 .footer-top-line__left {
@@ -228,31 +227,36 @@ footer {
     font-size: 1.125rem;
     text-align: left;
     margin: 0 0 1rem 0;
+    user-select: none;
 }
 .footer-top-line li {
     text-align: left;
+    transition: all 0.5s ease-in-out;
 }
+.footer-top-line li:hover {
+    transform: translateX(0.5rem);
+}
+
 .link {
     letter-spacing: 0.5px;
     color: var(--gray-text) !important;
-    transition: color 0.5s linear, border 0.3s linear;
+    transition: color 0.5s ease-in, border 0.3s linear;
     border-radius: var(--border-radius);
 }
 .link:hover {
-    color: var(--dark-gray-text);
+    color: var(--dark-gray-text) !important;
     border: 1px solid var(--light-orange);
 }
 .link:active {
     background-color: var(--light-orange);
 }
 
-
-    .footer-bg-text {
+.footer-bg-text {
     position: absolute;
     bottom: 0;
     white-space: nowrap;
     width: inherit;
     overflow: hidden;
     font-size: clamp(2rem, 7vw, 12rem);
-    transform: translateY(1.1rem);
+    transform: translateY(clamp(0.2rem, 0.6rem, 2rem));
 }
