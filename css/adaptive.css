@@ -7,10 +7,7 @@
 
 /* Для средних экранов (планшеты) */
 @media (min-width: 768px) {
-    .bottom-line {
-        flex-direction: row;
-    }
-    .bottom-line__right ul {
+    .footer-top-line {
         flex-direction: row;
     }
 }

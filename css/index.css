@@ -42,6 +42,15 @@
     animation: slideLeft 1.6s ease-in forwards;
 }
 
+.header-bg-text {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: inherit;
+    height: 100%;
+    word-break: break-all;
+}
+
 
 .header__right {
     width: 60%;
@@ -76,7 +85,7 @@
 /* Площадки */
 .basketball-courts-section {
     position: relative;
-    box-shadow: var(--top-box-shadow), var(--bottom-box-shadow);
+    box-shadow: var(--top-box-shadow);
 }
 .court-tiles-container {
     margin: 0 auto;

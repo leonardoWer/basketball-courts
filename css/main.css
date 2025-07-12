@@ -126,18 +126,12 @@ body {
     font-family: "Inter_Bold", sans-serif;
     font-size: 10rem;
     color: var(--white-gray-text);
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: inherit;
-    height: 100%;
     display: flex;
     align-items: center;
     justify-content: center;
     pointer-events: none;
     user-select: none;
     overflow: hidden;
-    word-break: break-all;
     z-index: 1;
 }
 
@@ -190,49 +184,59 @@ body {
     background-color: var(--light-orange);
     color: var(--dark-gray-text) !important;
     font-family: Inter_Bold, sans-serif;
+    scale: 1.01;
 }
 
 
 /* Футер */
 footer {
-    background-color: var(--gray-background);
-    padding-top: 16vh;
+    padding: 8vh 0;
     text-align: center;
 }
+.footer-bg {
+    position: relative;
+    width: 98%;
+    height: 70vh;
+    border-radius: var(--border-radius);
+    background-color: var(--gray-background);
+    margin: 0 auto;
+}
 
-.bottom-line {
+
+.footer-top-line {
     display: flex;
     flex-direction: column;
-    align-items: center;
-    justify-content: space-between;
+    justify-content: center;
+    gap: 8vw;
     margin: 0 auto;
-    padding: 2rem 4rem;
+    padding: 8vh 0 0 0;
 }
-
-.bottom-line__left {
+.footer-top-line__left {
     display: flex;
     align-items: center;
 }
-.bottom-line-logo-img {
+.footer-logo-img {
     width: 2rem;
     height: auto;
     line-height: 1.5rem;
     opacity: 0.9;
 }
 
-.bottom-line__right {
-    display: flex;
-    align-items: center;
+.footer-top-line-title-text {
+    font-family: "Inter_Bold", sans-serif;
+    color: var(--dark-gray-text);
+    font-size: 1.125rem;
+    text-align: left;
+    margin: 0 0 1rem 0;
 }
-.bottom-line__right ul {
-    display: flex;
-    flex-direction: column;
-    text-align: center;
-}
-.bottom-line__right li {
-    margin: 8px 20px;
+.footer-top-line li {
+    text-align: left;
     letter-spacing: 0.5px;
+    color: var(--gray-text);
 }
-.bottom-line__right li:first-child {
-    font-family: Inter_Bold, sans-serif;
+
+.footer-bg-text {
+    word-break: keep-all;
+    position: absolute;
+    bottom: 0;
 }
