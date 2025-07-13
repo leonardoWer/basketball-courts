@@ -13,60 +13,64 @@
 }
 
 .header__left {
-    width: 40%;
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 63vw;
     height: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
+    box-shadow: var(--right-box-shadow);
+    z-index: 10;
 }
 .header-img {
     position: absolute;
     bottom: 0;
+    left: 10vw;
     z-index: 10;
-}
-.header-img img {
-    width: 100%;
-    height: auto;
-    display: block;
-    transition: scale 0.8s;
-}
-
-.header__left-slide-bg {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: inherit;
-    height: 100%;
-    background-color: var(--white-background);
-    transition: all 0.8s;
-    animation: slideLeft 1.6s ease-in forwards;
 }
 
 .header-bg-text {
     position: absolute;
     top: 0;
     left: 0;
-    width: inherit;
+    width: 40vw;
     height: 100%;
     word-break: break-all;
+    color: var(--dark-gray-text);
+}
+
+.header-orange-button {
+    position: absolute;
+    left: 2vw;
+    bottom: 2vh;
+    width: 80px;
+    height: 80px;
+    border-radius: 100%;
+    background-color: var(--dark-gray-text);
+    transition: background-color 0.5s linear, scale 0.3s ease-in-out;
+}
+.fa-arrow-down {
+    scale: 1.2;
+    object-position: center;
+    transition: all ease 0.3s;
+    color: var(--white-background);
+}
+.header-orange-button:hover {
+    background-color: var(--orange);
+    scale: 1.05;
+    .fa-arrow-down {
+        color: var(--dark-gray-text);
+        transform: translateY(2px);
+        scale: 1.3;
+    }
 }
 
 
 .header__right {
-    width: 60%;
-    padding: 40px;
-}
-
-.hr-text-container {
-    position: absolute;
-    top: 25%;
-    right: 8%;
-    max-width: 36%;
-}
-.map-button {
-    width: 50%;
-    position: absolute;
-    left: 1rem;
+    width: 38vw;
+    height: 100%;
 }
 
 .header__scroll-bg {
@@ -80,6 +84,23 @@
     opacity: 0;
     transition: opacity 0.1s linear;
     pointer-events: none;
+}
+
+.header__right_img-container {
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: inherit;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    background-color: var(--dark-gray-text);
+    padding-left: 1rem;
+}
+.header__right_img-container img {
+    height: 90%;
+    border-radius: calc(var(--border-radius) * 2);
+
 }
 
 /* Площадки */

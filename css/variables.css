@@ -7,7 +7,7 @@
     --gray-text: #8c8c8c;
     --dark-gray-text: #3c3c3c;
     --dark-gray-rgb: rgba(60, 60, 60, 0.9);
-    --orange: #FFAE42;
+    --orange: #ff9002;
     --light-orange: #FF8243;
 
     /* Градиенты */
@@ -16,6 +16,7 @@
 
     /* Тени */
     --top-box-shadow: 0 -20px 20px -20px rgba(0, 0, 0, 0.2);
+    --right-box-shadow: 20px 0 20px -20px rgba(0, 0, 0, 0.2);
     --bottom-box-shadow: 0 20px 20px -20px rgba(0, 0, 0, 0.2);
 
     /* Радиусы */

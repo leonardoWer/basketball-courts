@@ -9,7 +9,7 @@ body {
     font-family: "Inter_Regular", sans-serif;
 }
 
-.fa {
+.left-i {
     margin-right: 4px;
     scale: 0.9;
 }
@@ -61,7 +61,7 @@ body {
     align-items: center;
 }
 .top-line-logo-img {
-    width: 44px;
+    width: 36px;
     height: auto;
     opacity: 0.9;
 }
@@ -192,6 +192,7 @@ body {
 footer {
     padding: 8vh 0;
     text-align: center;
+    background-color: var(--dark-gray-text);
 }
 .footer-bg {
     position: relative;
@@ -245,7 +246,6 @@ footer {
 }
 .link:hover {
     color: var(--dark-gray-text) !important;
-    border: 1px solid var(--light-orange);
 }
 .link:active {
     background-color: var(--light-orange);
@@ -257,6 +257,7 @@ footer {
     white-space: nowrap;
     width: inherit;
     overflow: hidden;
-    font-size: clamp(2rem, 7vw, 12rem);
-    transform: translateY(clamp(0.2rem, 0.6rem, 2rem));
+    font-size: clamp(2rem, 7vw, 15rem);
+    transform: translateY(calc(clamp(2rem, 7vw, 15rem) / 5));
+    color: var(--dark-gray-text);
 }

@@ -23,7 +23,7 @@ function initHeader() {
         header.style.opacity = opacity;
 
         // Верхнее меню
-        if (scrollPosition >= headerHeight * 0.4) {
+        if (scrollPosition >= headerHeight * 0.2) {
             topMenu.classList.add('active');
             topMenu.classList.remove('hidden');
         } else {
