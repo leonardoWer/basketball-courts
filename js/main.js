@@ -1,6 +1,5 @@
 document.addEventListener("DOMContentLoaded", function () {
     initCustomCursor();
-    initFadeInText();
 });
 
 
@@ -49,17 +48,6 @@ function initCustomCursor() {
     document.addEventListener('mousemove', moveCursor);
     document.addEventListener('mousedown', addClickEffect);
     document.addEventListener('mouseup', removeClickEffect);
-}
-
-function initFadeInText() {
-    const elements = document.querySelectorAll('.fade-in-text');
-
-    // Для каждого элемента добавляем класс 'active' после небольшой задержки
-    elements.forEach(function (element, index) {
-        setTimeout(function () {
-            element.classList.add('active');
-        }, index * 200);
-    });
 }
 
 

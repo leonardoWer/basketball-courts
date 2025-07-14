@@ -125,7 +125,6 @@ body {
 .background-text {
     font-family: "Inter_Bold", sans-serif;
     font-size: 10rem;
-    color: var(--white-gray-text);
     display: flex;
     align-items: center;
     justify-content: center;
@@ -145,16 +144,6 @@ body {
 }
 
 
-.fade-in-text {
-    transform: translateX(-20px) scale(0.95);
-    transition: opacity 1s linear, transform 1s ease;
-    display: inline-block;
-}
-.fade-in-text.active {
-    transform: translateX(0) scale(1);
-}
-
-
 /* Кнопки */
 .gray-button {
     display: block;
@@ -168,14 +157,14 @@ body {
 }
 .gray-button:hover {
     background-color: var(--dark-gray-text);
-    color: var(--white-gray-text);
+    color: var(--white-background);
 }
 .orange-button {
     display: block;
     text-align: center;
     margin: 24px auto 16px auto;
     padding: 12px 0;
-    color: var(--white-gray-text) !important;
+    color: var(--white-background) !important;
     background-color: var(--dark-gray-text);
     border-radius: var(--border-radius);
     transition: all 0.3s linear;
@@ -198,7 +187,7 @@ footer {
     position: relative;
     width: 96vw;
     height: 70vh;
-    border-radius: var(--border-radius);
+    border-radius: var(--two-border-radius);
     background-color: var(--gray-background);
     margin: 0 auto;
 }

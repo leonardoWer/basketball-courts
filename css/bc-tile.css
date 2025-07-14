@@ -35,7 +35,7 @@
 .tile-label {
     width: max-content;
     background-color: var(--light-orange);
-    color: var(--white-gray-text);
+    color: var(--white-background);
     padding: 8px 12px;
     border-radius: var(--border-radius);
     font-size: 0.8rem;
@@ -45,7 +45,7 @@
 .tile-title {
     font-size: 1.2rem;
     font-family: Inter_Medium, sans-serif;
-    color: var(--white-gray-text);
+    color: var(--white-background);
 }
 
 .tile-button {
@@ -61,7 +61,7 @@
 }
 .tile-button:hover {
     background-color: var(--dark-gray-text);
-    color: var(--white-gray-text);
+    color: var(--white-background);
 }
 
 .tile-type-text {
