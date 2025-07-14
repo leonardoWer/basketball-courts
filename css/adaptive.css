@@ -3,6 +3,15 @@
 
 /* Для маленьких экранов (телефоны landscape, маленькие планшеты) */
 @media (max-width: 575.98px) {
+    .header-img-container {
+        left: 10%;
+        width: 100%;
+    }
+    .header-bg-text {
+        width: 80vw;
+        font-size: 5rem;
+    }
+
     .bc-tile {
         height: 400px;
     }
@@ -10,11 +19,18 @@
 
 /* Для средних экранов (планшеты) */
 @media (min-width: 576px) {
-
+    .header-bg-text {
+        width: 70vw;
+        font-size: 6.8rem;
+    }
 }
 
 /* Для больших экранов (небольшие десктопы, лаптопы) */
 @media (min-width: 768px) {
+    .header-bg-text {
+        font-size: 8rem;
+    }
+
     .tile-label {
         font-size: 0.9rem;
     }
@@ -29,22 +45,48 @@
 
 /* Для очень больших экранов (большие десктопы) */
 @media (min-width: 992px) {
+    .header-bg-text {
+        font-size: 10rem;
+    }
+
     .bc-tile {
         width: calc((100% / 2) - 40px); /* 2 плитки в строке */
     }
 }
 
 @media (min-width: 1200px) {
+    .header-bg-text {
+        width: initial;
+        font-size: 12rem;
+    }
+
     .bc-tile {
         width: calc((100% / 3) - 40px); /* 3 плитки в строке */
     }
 }
 
 @media (min-width: 1600px) {
-    .header-bg-text {
-        font-size: 13rem;
-        line-height: 14rem;
+    .header-container {
+        flex-direction: row;
     }
+    .header__left {
+        width: 63vw;
+        height: 100%;
+    }
+    .header-img-container {
+        width: initial;
+    }
+    .header__right {
+        display: initial;
+        width: 38vw;
+        height: 100%;
+    }
+    .header-bg-text {
+        font-size: 12rem;
+        line-height: 9rem;
+    }
+
+
     .bcc-container {
         flex-direction: row;
     }
