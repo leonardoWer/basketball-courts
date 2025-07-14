@@ -23,12 +23,26 @@
         width: 70vw;
         font-size: 6.8rem;
     }
+
+    .bcc-container__left-bc-cnt-description {
+        font-size: 4rem;
+    }
+    .el-button-circle-begin {
+        width: 60%;
+    }
 }
 
 /* Для больших экранов (небольшие десктопы, лаптопы) */
 @media (min-width: 768px) {
     .header-bg-text {
         font-size: 8rem;
+    }
+
+    .bcc-container__left-bc-cnt {
+        font-size: 12rem;
+    }
+    .el-button-circle-begin {
+        width: 50%;
     }
 
     .tile-label {
@@ -48,6 +62,9 @@
     .header-bg-text {
         font-size: 10rem;
     }
+    .el-button-circle-begin {
+        width: 40%;
+    }
 
     .bc-tile {
         width: calc((100% / 2) - 40px); /* 2 плитки в строке */
@@ -58,6 +75,39 @@
     .header-bg-text {
         width: initial;
         font-size: 12rem;
+    }
+    .bcd-container__center {
+        flex-direction: row;
+    }
+    .bcd-container-center__left {
+        width: 50%;
+        height: initial;
+        padding: 2% 4%;
+    }
+    .bcd-container-center__right {
+        width: 50%;
+        padding: 0;
+    }
+    .bcd-container-center__right-text {
+        font-size: 3rem;
+        margin: 2rem auto;
+    }
+
+    .bcc-container__left, .bcc-container__right {
+        min-height: initial;
+        height: 48vh;
+    }
+    .bcc-container__left-bc-cnt {
+        font-size: 16rem;
+    }
+    .bcc-container__left-bc-cnt-description {
+        font-size: 5rem;
+    }
+    .bcc-container__right-bc-text {
+        font-size: 4rem;
+    }
+    .el-button-circle-begin {
+        width: 25%;
     }
 
     .bc-tile {
@@ -90,9 +140,13 @@
     .bcc-container {
         flex-direction: row;
     }
+    .bcd-container-center__right-text {
+        font-size: 3.8rem;
+    }
     .bcc-container__left, .bcc-container__right {
         width: 50%;
     }
+
 }
 
 /* Для огромных экранов */
@@ -101,8 +155,17 @@
         font-size: 17rem;
         line-height: 14rem;
     }
+    .bcd-container-center__right-text {
+        font-size: 5rem;
+    }
+}
 
-    /*.bc-tile {*/
-    /*    width: calc((100% / 4) - 40px); !* 4 плитки в строке *!*/
-    /*}*/
+@media (min-width: 3440px) {
+    .bcc-container__left, .bcc-container__right {
+        min-height: initial;
+        height: 30vh;
+    }
+    .bcd-container__center {
+        min-height: 40vh;
+    }
 }
