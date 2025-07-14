@@ -127,6 +127,7 @@
 }
 .bcd-container {
     width: 100%;
+    max-width: var(--max-width);
 }
 
 .bcd-container__center {
@@ -167,6 +168,7 @@
 /* Количество площадок */
 .bcc-container {
     width: 100%;
+    max-width: var(--max-width);
     display: flex;
     flex-direction: column;
     gap: 2rem;
