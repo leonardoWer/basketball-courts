@@ -1,7 +1,6 @@
 .bc-tile {
     width: calc(100% - 40px);
-    height: auto;
-    max-height: 420px;
+    max-height: 520px;
     padding: 6px 6px 16px 6px;
     border-radius: var(--border-radius);
     display: flex;

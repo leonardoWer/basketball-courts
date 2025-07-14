@@ -3,14 +3,14 @@
 
 /* Для маленьких экранов (телефоны landscape, маленькие планшеты) */
 @media (max-width: 575.98px) {
-
+    .bc-tile {
+        height: 400px;
+    }
 }
 
 /* Для средних экранов (планшеты) */
 @media (min-width: 576px) {
-    .bc-tile {
-        width: calc((100% / 2) - 40px); /* 2 плитки в строке */
-    }
+
 }
 
 /* Для больших экранов (небольшие десктопы, лаптопы) */
@@ -29,14 +29,12 @@
 
 /* Для очень больших экранов (большие десктопы) */
 @media (min-width: 992px) {
-
+    .bc-tile {
+        width: calc((100% / 2) - 40px); /* 2 плитки в строке */
+    }
 }
 
 @media (min-width: 1200px) {
-    .bcc-container {
-        flex-direction: row;
-    }
-
     .bc-tile {
         width: calc((100% / 3) - 40px); /* 3 плитки в строке */
     }
@@ -46,6 +44,12 @@
     .header-bg-text {
         font-size: 13rem;
         line-height: 14rem;
+    }
+    .bcc-container {
+        flex-direction: row;
+    }
+    .bcc-container__left, .bcc-container__right {
+        width: 50%;
     }
 }
 
