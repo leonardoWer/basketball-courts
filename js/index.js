@@ -152,10 +152,32 @@ function initRotationElementMouseMoving() {
 }
 
 
+function initScrollButton() {
+    const scrollButtons = document.querySelectorAll('.scroll-button');
+
+    scrollButtons.forEach(button => {
+        button.addEventListener('click', (event) => {
+            event.preventDefault(); // Предотвращаем стандартное поведение кнопки (если нужно)
+
+            const targetSectionId = button.dataset.target; // Получаем ID целевой секции
+            const targetElement = document.getElementById(targetSectionId);
+
+            if (targetElement) {
+                targetElement.scrollIntoView({
+                    behavior: 'smooth',
+                    block: 'center'
+                });
+            }
+        });
+    });
+}
+
+
 // Загрузка страницы
 document.addEventListener('DOMContentLoaded', function () {
     initScrollCheckAnimations();
     initObservingAnimations();
+    initScrollButton();
 });
 
 initRotationElementMouseMoving();
