@@ -92,7 +92,7 @@ function initRotationElementMouseMoving() {
 
     // Параметры анимации
     const ease = 0.1; // Скорость движения
-    const rotationSensitivity = 7 // Чувствительность поворота
+    const rotationSensitivity = 10 // Чувствительность поворота
 
     // Текущий поворот
     let currentX = 0
