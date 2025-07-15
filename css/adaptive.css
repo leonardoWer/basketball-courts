@@ -159,8 +159,19 @@
     .bcd-container-center__right-text {
         font-size: 4.8rem;
     }
+
+    .tile-label {
+        font-size: 0.9rem;
+    }
+    .tile-title {
+        font-size: 1.5rem;
+    }
+    .tile-type-text {
+        font-size: 0.9rem;
+    }
 }
 
+/* Для -- экранов */
 @media (min-width: 3440px) {
     .bcc-container__left, .bcc-container__right {
         min-height: initial;
