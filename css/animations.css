@@ -109,3 +109,40 @@
         transform: translateY(-100px);
     }
 }
+
+@keyframes basketCourtRotation {
+    0% {
+        transform: rotateX(55deg) rotateY(-35deg) rotateZ(10deg);
+    }
+    10% {
+        transform: rotateX(65deg) rotateY(-20deg) rotateZ(25deg);
+    }
+    20% {
+        transform: rotateX(40deg) rotateY(0deg) rotateZ(45deg);
+    }
+    30% {
+        transform: rotateX(20deg) rotateY(25deg) rotateZ(30deg);
+    }
+    40% {
+        transform: rotateX(30deg) rotateY(40deg) rotateZ(0deg);
+    }
+    50% {
+        transform: rotateX(70deg) rotateY(40deg) rotateZ(-15deg);
+    }
+    60% {
+        transform: rotateX(85deg) rotateY(20deg) rotateZ(-30deg);
+    }
+    70% {
+        transform: rotateX(70deg) rotateY(-10deg) rotateZ(-45deg);
+    }
+    80% {
+        transform: rotateX(50deg) rotateY(-40deg) rotateZ(-30deg);
+    }
+    90% {
+        transform: rotateX(65deg) rotateY(-50deg) rotateZ(0deg);
+        animation-timing-function: ease-out;
+    }
+    100% {
+        transform: rotateX(55deg) rotateY(-35deg) rotateZ(10deg);
+    }
+}

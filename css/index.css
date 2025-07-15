@@ -150,7 +150,14 @@
     width: 100%;
     height: 100%;
     border-radius: var(--border-radius);
-    transform: rotateZ(10deg) rotateX(55deg) rotateY(-35deg);
+    /*transform: rotateZ(10deg) rotateX(55deg) rotateY(-35deg);*/
+    animation: basketCourtRotation 60s linear infinite;
+    transition: transform 0.2s ease;
+    perspective: 600px;
+}
+.bcd-container-center__left-bc-img:hover {
+    animation: none;
+    animation-play-state: paused;
 }
 
 .bcd-container-center__right {
