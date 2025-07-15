@@ -29,11 +29,3 @@
     --max-width: 3440px;
 
 }
-
-/* Выделение мыши */
-::selection {
-    /*background-color: var(--dark-gray-rgb);*/
-    /*color: var(--white-gray-text);*/
-    background-color: var(--light-orange);
-    color: var(--dark-gray-text);
-}

@@ -159,3 +159,39 @@
         transform: rotateX(55deg) rotateY(-35deg) rotateZ(10deg);
     }
 }
+
+@keyframes skewImg {
+    0% {
+        transform: skew(0deg);
+    }
+    10% {
+        transform: skew(-3deg) rotate(-1deg); /* Небольшой наклон и поворот */
+    }
+    20% {
+        transform: skew(2deg) rotate(1deg);   /* Другое направление */
+    }
+    30% {
+        transform: skew(-1deg) rotate(-2deg); /* Еще один вариант */
+    }
+    40% {
+        transform: skew(3deg) rotate(0deg);  /* Снова меняем */
+    }
+    50% {
+        transform: skew(-2deg) rotate(2deg);
+    }
+    60% {
+        transform: skew(1deg) rotate(-1deg);
+    }
+    70% {
+        transform: skew(0deg) rotate(0deg); /* Возвращаемся к исходному */
+    }
+    80% {
+        transform: skew(1deg) rotate(1deg);
+    }
+    90% {
+        transform: skew(-1deg) rotate(-1deg);
+    }
+    100% {
+        transform: skew(0deg);
+    }
+}

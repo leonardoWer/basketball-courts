@@ -121,6 +121,11 @@
     animation: fadeInText 2s ease;
 }
 
+.skew-img {
+    transition: 0.8s ease-in-out;
+    animation: skewImg 30s ease infinite;
+}
+
 
 /* Описание площадок */
 .basketball-courts-description-section {
