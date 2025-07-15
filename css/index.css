@@ -102,6 +102,7 @@
     margin: 0 auto;
 }
 
+
 /* Анимации при скролле */
 .animation-container[data-animation="fade-in"] {
     transition: transform 0.8s ease-out, opacity 0.8s linear;
@@ -112,6 +113,12 @@
 .animation-container[data-animation="fade-in"].animated {
     opacity: 1;
     transform: translateY(0);
+}
+
+
+.animation-text[data-animation="fade-in-text"] {
+    transition: all 0.8s ease-in-out;
+    animation: fadeInText 2s ease;
 }
 
 
