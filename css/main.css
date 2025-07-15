@@ -59,6 +59,7 @@ body {
 .top-line__left {
     display: flex;
     align-items: center;
+    transition: all 0.8s;
 }
 .top-line-logo-img {
     width: 36px;
@@ -78,11 +79,11 @@ body {
     transition: all 0.8s;
     opacity: 0;
 }
-.top-menu.active {
+.top-menu.active, .top-line__left.active {
     opacity: 1;
     animation: topMenuIn 1.2s ease-in-out;
 }
-.top-menu.hidden {
+.top-menu.hidden, .top-line__left.hidden {
     opacity: 0;
     animation: topMenuOut 1.2s ease-in-out;
 }

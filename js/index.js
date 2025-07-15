@@ -2,7 +2,9 @@
 function initHeader() {
     const header = document.querySelector('.header__scroll-bg');
     const headerHeight = header.offsetHeight;
+
     const topMenu = document.querySelector('.top-menu');
+    const topLogo = document.querySelector('.top-line__left');
 
     function checkScroll() {
         let scrollPosition = window.scrollY;
@@ -10,7 +12,7 @@ function initHeader() {
 
         // Затемнение хедера
         if (scrollPosition < headerHeight) {
-            opacity = scrollPosition / headerHeight * 0.8;
+            opacity = scrollPosition / headerHeight * 0.9;
         } else {
             opacity = 1;
         }
@@ -22,9 +24,15 @@ function initHeader() {
         if (scrollPosition >= headerHeight * 0.2) {
             topMenu.classList.add('active');
             topMenu.classList.remove('hidden');
+
+            topLogo.classList.add('hidden');
+            topLogo.classList.remove('active');
         } else {
             topMenu.classList.add('hidden');
             topMenu.classList.remove('active');
+
+            topLogo.classList.add('active');
+            topLogo.classList.remove('hidden');
         }
     }
 
