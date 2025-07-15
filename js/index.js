@@ -1,5 +1,5 @@
 // Затемнение хедера
-function initHeader() {
+function initScrollCheckAnimations() {
     const header = document.querySelector('.header__scroll-bg');
     const headerHeight = header.offsetHeight;
 
@@ -45,7 +45,7 @@ function initHeader() {
 
 
 // Анимации при скролле
-function initAnimations() {
+function initObservingAnimations() {
     const observer = new IntersectionObserver((entries, observer) => {
         entries.forEach(entry => handleIntersection(entry, observer));
     });
@@ -154,8 +154,8 @@ function initRotationElementMouseMoving() {
 
 // Загрузка страницы
 document.addEventListener('DOMContentLoaded', function () {
-    initHeader();
-    initAnimations();
+    initScrollCheckAnimations();
+    initObservingAnimations();
 });
 
 initRotationElementMouseMoving();
