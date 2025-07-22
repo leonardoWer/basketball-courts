@@ -1,10 +1,199 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ru">
 <head>
   <meta charset="UTF-8">
-  <title>Title</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="all">
+  <meta name="description" content="Ищи баскетбольные площадки в своём городе">
+  <title>Баскетбольные площадки</title>
+
+  <link rel="stylesheet" href="../css/main.css">
+  <link rel="stylesheet" href="../css/index.css">
+  <link rel="stylesheet" href="../css/bc-tile.css">
+  <link rel="stylesheet" href="../css/adaptive.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
+
+
 <body>
 
+<header class="header-top">
+  <div class="top-line">
+
+    <div class="top-line__left">
+      <a href="#" class="top-line-logo">
+        <img class="top-line-logo-img" src="../assets/img/logo/basketball-courts-logo.png" alt="logo">
+      </a>
+      <span class="logo-text">basket-courts</span>
+    </div>
+
+    <div class="top-line__center">
+      <nav class="top-menu">
+        <ul>
+          <li><a href="#"><i class="left-i fa-solid fa-house"></i>Главная</a></li>
+          <li><a href="map.html"><i class="left-i fa-solid fa-location-dot"></i>Карта</a></li>
+        </ul>
+      </nav>
+    </div>
+
+  </div>
+</header>
+
+
+<section class="header-section">
+  <div class="header-container scrolled">
+
+    <div class="header__left">
+      <div class="header-img-container">
+        <img class="header-img skew-img" src="../assets/img/basketball-player.png" alt="logo">
+      </div>
+      <h2 class="header-bg-text background-text animation-text" data-animation="fade-in-text">Баскет<br>больные<br>площадки</h2>
+      <button class="header-orange-button scroll-button" data-target="bc-section">
+        <i class="fa fa-arrow-down header-arrow-down"></i>
+      </button>
+    </div>
+
+    <div class="header__right">
+
+      <div class="header__right_img-container">
+        <img src="../assets/img/basket-og.jpg" alt="basket">
+      </div>
+
+    </div>
+
+    <div class="header__scroll-bg"></div>
+
+  </div>
+</section>
+
+
+<section class="basketball-courts-description-section">
+
+  <div class="bcd-container">
+
+    <div class="bcd-container__center animation-container" data-animation="fade-in">
+
+      <div class="bcd-container-center__left">
+        <img class="bcd-container-center__left-bc-img" src="../assets/img/bc-2.jpg" alt="bc-model"/>
+      </div>
+
+      <div class="bcd-container-center__right">
+        <h3 class="bcd-container-center__right-text">
+          Этот сайт поможет вам быстро найти подходящую баскетбольную площадку в вашем городе.
+          Мы собрали информацию о большинстве кортов, чтобы вы могли легко найти место для тренировки или игры с друзьями. Наслаждайтесь баскетболом!
+        </h3>
+      </div>
+
+    </div>
+
+  </div>
+
+  <div class="bcc-container animation-container" data-animation="fade-in">
+
+    <div class="bcc-container__left animation-container" data-target="3" data-animation="number-counter" data-duration="2000">
+      <h3 class="bcc-container__left-bc-cnt number-counter">0</h3>
+      <span class="bcc-container__left-bc-cnt-description">Баскетбольные площадки</span>
+    </div>
+
+    <div class="bcc-container__right">
+      <h4 class="bcc-container__right-bc-text">
+        Карта - удобный инструмент для поиска кортов. Здесь вы сможете быстро рассмотреть все места, оценить их расположение и выбрать наиболее удобный
+      </h4>
+
+      <a class="el-button-circle-begin" href="map.html">
+        <span class="el-button-arrow-container">
+          <i class="fa fa-arrow-down el-button-arrow"></i>
+        </span>
+
+        <span class="el-button-text">Карта</span>
+      </a>
+    </div>
+
+  </div>
+
+</section>
+
+
+<section class="basketball-courts-section" id="bc-section">
+
+  <div class="balls-bg">
+    <img src="../assets/img/logo/basketball-courts-logo.png" class="bg-ball ball-1" alt="ball">
+    <img src="../assets/img/logo/basketball-courts-logo.png" class="bg-ball ball-2" alt="ball">
+    <img src="../assets/img/logo/basketball-courts-logo.png" class="bg-ball ball-3" alt="ball">
+    <img src="../assets/img/logo/basketball-courts-logo.png" class="bg-ball ball-4" alt="ball">
+    <img src="../assets/img/logo/basketball-courts-logo.png" class="bg-ball ball-5" alt="ball">
+    <img src="../assets/img/logo/basketball-courts-logo.png" class="bg-ball ball-6" alt="ball">
+    <img src="../assets/img/logo/basketball-courts-logo.png" class="bg-ball ball-7" alt="ball">
+  </div>
+
+  <div class="court-tiles-container" id="tilesContainer">
+
+    <div class="bc-tile">
+      <div class="bc-img-container">
+        <img src="../assets/img/bc-1.jpg" alt="bc-1">
+
+        <div class="bc-img-content">
+          <div class="tile-label">
+            открытая
+          </div>
+          <div class="tile-title">
+            Lorem ipsum dolor sit amet.
+          </div>
+        </div>
+
+      </div>
+
+      <a href="#" class="tile-button">Посмотреть на карте</a>
+      <span class="tile-type-text"><i class="fa fa-solid fa-check"></i>Бесплатно</span>
+    </div>
+
+  </div>
+</section>
+
+
+<footer>
+  <div class="footer-bg">
+
+    <div class="footer-top-line">
+
+      <div class="footer-top-line__left">
+        <a href="#" class="bottom-line-logo">
+          <img class="footer-logo-img" src="../assets/img/logo/basketball-courts-logo.png" alt="logo">
+        </a>
+        <span class="logo-text">basket-courts</span>
+      </div>
+
+      <div class="footer-top-line__explore">
+        <h4 class="footer-top-line-title-text">Места</h4>
+        <ul>
+          <li><a class="link" href="map.html">Карта</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-top-line__socials">
+        <h4 class="footer-top-line-title-text">Социальные сети</h4>
+        <ul>
+          <li><a class="link" href="https://t.me/leonardo_Wer" target="_blank">Разработчик</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-top-line__contact">
+        <h4 class="footer-top-line-title-text">Контакты</h4>
+        <ul>
+          <li><a class="link" href="#">Предложить площадку</a></li>
+        </ul>
+      </div>
+
+    </div>
+
+    <span class="footer-bg-text background-text">Баскетбольные площадки</span>
+
+  </div>
+</footer>
+
+
+<script src="../js/main.js"></script>
+<script src="../js/index.js" type="module"></script>
+<script src="../js/initCourts.js"></script>
 </body>
 </html>

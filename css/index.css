@@ -1,0 +1,352 @@
+/* Шапка */
+.header-section {
+    background-color: var(--gray-background);
+}
+.header-container {
+    height: 100vh;
+    max-width: var(--max-width);
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    overflow: hidden;
+}
+
+.header__left {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    box-shadow: var(--right-box-shadow);
+    z-index: 10;
+    position: relative;
+}
+.header-img-container {
+    position: absolute;
+    bottom: 0;
+    left: 20%;
+    z-index: 10;
+    overflow: hidden;
+    height: fit-content;
+    width: 60%;
+}
+.header-img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    object-position: center;
+}
+
+.header-bg-text {
+    width: 40vw;
+    word-break: break-all;
+    color: var(--dark-gray-text);
+}
+
+.header-orange-button {
+    position: absolute;
+    left: 2vw;
+    bottom: 2vh;
+    width: 80px;
+    height: 80px;
+    border-radius: 100%;
+    background-color: var(--dark-gray-text);
+    transition: background-color 0.5s linear, scale 0.2s ease;
+}
+.header-arrow-down {
+    scale: 1.2;
+    object-position: center;
+    transition: all ease 0.3s;
+    color: var(--white-background);
+}
+.header-orange-button:hover {
+    background-color: var(--orange);
+    .header-arrow-down {
+        color: var(--dark-gray-text);
+        transform: translateY(2px);
+        scale: 1.3;
+    }
+}
+.header-orange-button:active {
+    scale: 1.05;
+}
+
+.header__right {
+    display: none;
+    overflow: hidden;
+}
+
+.header__scroll-bg {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 10;
+    background-color: rgba(0, 0, 0, 0.8);
+    opacity: 0;
+    transition: opacity 0.1s linear;
+    pointer-events: none;
+}
+
+.header__right_img-container {
+    width: inherit;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    background-color: var(--dark-gray-text);
+    padding: 4rem 2rem;
+    overflow: hidden;
+}
+.header__right_img-container img {
+    object-fit: contain;
+    border-radius: var(--two-border-radius);
+    margin: 0 auto;
+}
+
+
+/* Анимации при скролле */
+.animation-container[data-animation="fade-in"] {
+    transition: transform 0.8s ease-out, opacity 0.8s linear;
+    opacity: 0.4;
+    transform: translateY(120px);
+}
+
+.animation-container[data-animation="fade-in"].animated {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+
+.animation-text[data-animation="fade-in-text"] {
+    transition: all 0.8s ease-in-out;
+    animation: fadeInText 2s ease;
+}
+
+.skew-img {
+    transition: 0.8s ease-in-out;
+    animation: skewImg 30s ease infinite;
+}
+
+
+/* Описание площадок */
+.basketball-courts-description-section {
+    box-shadow: var(--top-box-shadow);
+    padding: var(--section-padding);
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    gap: 2rem;
+}
+.bcd-container {
+    width: 100%;
+    max-width: var(--max-width);
+}
+
+.bcd-container__center {
+    border-radius: var(--two-border-radius);
+    display: flex;
+    flex-direction: column;
+    min-height: 50vh;
+    overflow: hidden;
+    background-color: var(--gray-background);
+}
+
+.bcd-container-center__left {
+    width: 100%;
+    height: 30vh;
+    overflow: hidden;
+    padding: 3rem;
+}
+.bcd-container-center__left-bc-img {
+    object-fit: fill;
+    width: 100%;
+    height: 100%;
+    border-radius: var(--border-radius);
+    /*transform: rotateZ(10deg) rotateX(55deg) rotateY(-35deg);*/
+    animation: basketCourtRotation 60s linear infinite;
+    transition: transform 0.2s ease;
+    perspective: 600px;
+}
+.bcd-container-center__left-bc-img:hover {
+    animation: none;
+    animation-play-state: paused;
+}
+
+.bcd-container-center__right {
+    width: 100%;
+    padding: 0 2rem;
+    overflow: hidden;
+}
+.bcd-container-center__right-text {
+    color: var(--dark-gray-text);
+    font-family: Inter_Medium, sans-serif;
+    font-size: 2rem;
+    text-overflow: ellipsis;
+    margin: 2rem auto;
+}
+
+
+/* Количество площадок */
+.bcc-container {
+    width: 100%;
+    max-width: var(--max-width);
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.bcc-container__left {
+    border-radius: var(--two-border-radius);
+    background: var(--orange__sunrize-gradient-diag);
+    width: 100%;
+    min-height: 48vh;
+    position: relative;
+    overflow: hidden;
+}
+.bcc-container__left-bc-cnt {
+    position: absolute;
+    left: 5%;
+    top: 10%;
+    font-family: Inter_Bold, sans-serif;
+    font-size: 10rem;
+    color: var(--dark-gray-text);
+}
+.bcc-container__left-bc-cnt-description {
+    position: absolute;
+    left: 5%;
+    bottom: 10%;
+    font-family: Inter_Medium, sans-serif;
+    font-size: 2.5rem;
+    color: var(--dark-gray-text);
+}
+
+.bcc-container__right {
+    border-radius: var(--two-border-radius);
+    background-color: var(--dark-gray-text);
+    width: 100%;
+    min-height: 48vh;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 2rem;
+}
+.bcc-container__right-bc-text {
+    font-family: Inter_Medium, sans-serif;
+    font-size: 2rem;
+    color: var(--gray-text);
+    margin-bottom: 2rem;
+    overflow: hidden;
+}
+
+.el-button-circle-begin {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    border-radius: var(--two-border-radius);
+    background-color: var(--white-background);
+    cursor: pointer;
+}
+.el-button-arrow-container {
+    padding: 2rem;
+    border-radius: var(--two-border-radius);
+    background-color: var(--orange);
+    transition: all 1s ease;
+}
+.el-button-arrow {
+    scale: 1.2;
+    color: var(--white-background);
+    transition: transform 0.8s ease-in-out;
+}
+.el-button-text {
+    display: block;
+    color: var(--dark-gray-text);
+    margin-right: 2rem;
+    font-family: Inter_Medium, sans-serif;
+    font-size: 1.2rem;
+    transition: all 0.6s ease-in-out;
+    pointer-events: none;
+}
+.el-button-circle-begin:hover {
+    .el-button-text {
+        transform: translateX(-0.6rem);
+    }
+}
+.el-button-circle-begin:active {
+    .el-button-arrow-container {
+        transform: translateX(80%);
+    }
+    .el-button-arrow {
+        transform: scale(1.205) rotate(-90deg);
+    }
+}
+
+
+/* Площадки */
+.basketball-courts-section {
+    position: relative;
+    padding: var(--section-padding);
+}
+.court-tiles-container {
+    margin: 0 auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    max-width: 3200px;
+}
+
+.balls-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    background-color: var(--white-background);
+    z-index: -1;
+}
+.bg-ball {
+    position: absolute;
+    width: 20%;
+    height: 20%;
+    object-fit: contain;
+    filter: blur(8px);
+    opacity: 0.8;
+    transition: transform 0.5s ease-in-out;
+}
+.ball-1 {
+    top: calc(100% - 60% / 2);
+    left: calc(100% - 60% / 2);
+    animation: flyDiagonal 12s linear infinite;
+}
+.ball-2 {
+    top: 35%;
+    left: calc(100% - 60% / 2);
+    animation: flyHorizontal 15s linear infinite;
+}
+.ball-3 {
+    top: 20%;
+    left: 10%;
+    animation: flyVertical 8s linear infinite;
+}
+.ball-4 {
+    top: calc(100% - 60% / 3);
+    bottom: calc(100% - 60% / 3);
+    animation: flyDiagonalReverse 13s linear infinite;
+}
+.ball-5 {
+    top: 10%;
+    left: 50%;
+    animation: flyZigzag 11s linear infinite;
+}
+.ball-6 {
+    bottom: -100px;
+    right: -100px;
+    animation: flyCircle 8s linear infinite, flyVertical 6s linear infinite;;
+}
+.ball-7 {
+    top: -100px;
+    left: 40%;
+    animation: flyVertical 12s linear infinite;
+}

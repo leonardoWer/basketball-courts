@@ -1,0 +1,31 @@
+:root {
+    /* Цвета */
+    --gray-background: #dfdfdf;
+    --white-background: #ebebeb;
+    --light-gray-text: #d1d1d1;
+    --gray-text: #8c8c8c;
+    --dark-gray-text: #3c3c3c;
+    --dark-gray-rgb: rgba(60, 60, 60, 0.9);
+    --orange: #ff9002;
+    --light-orange: #FF8243;
+
+    /* Градиенты */
+    --linear-gradient-gray: linear-gradient(to bottom, var(--gray-text) 0%, var(--light-gray-text) 50%, var(--gray-background) 100%);
+    --linear-gradient-gray-orange: linear-gradient(to bottom, var(--gray-text) 0%, var(--light-gray-text) 50%, var(--orange) 100%);
+    --orange__sunrize-gradient-diag: linear-gradient(to top left, #ff512f, var(--orange));
+    --orange__sunrize-gradient-to-right: linear-gradient(to right, #ff512f, var(--orange));
+
+    /* Тени */
+    --top-box-shadow: 0 -20px 20px -20px rgba(0, 0, 0, 0.3);
+    --right-box-shadow: 20px 0 20px -20px rgba(0, 0, 0, 0.2);
+    --bottom-box-shadow: 0 20px 20px -20px rgba(0, 0, 0, 0.2);
+
+    /* Радиусы */
+    --border-radius: 16px;
+    --two-border-radius: 32px;
+
+    /*  Отступы  */
+    --section-padding: 10vh 6vw;
+    --max-width: 3440px;
+
+}
