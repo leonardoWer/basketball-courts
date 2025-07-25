@@ -61,6 +61,18 @@ export function initScrollTimeline() {
         }
     });
 
+    // Текст Площадки
+    gsap.to('.basketball-courts-title', {
+        duration: 2,
+        text: "Площадки",
+        scrollTrigger: {
+            trigger: '.basketball-courts-title',
+            start: "top 90%",
+            end: "bottom 40%",
+            scrub: true,
+        }
+    })
+
     // Футер
     gsap.from('.footer-bg', {
         borderRadius: 180,
