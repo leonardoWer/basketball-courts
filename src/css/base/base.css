@@ -18,7 +18,7 @@ html {
     width: 50px;
     height: 50px;
     opacity: 0.9;
-    background: url("../assets/img/logo/basketball-courts-logo.png") no-repeat center center;
+    background: url("../../../public/img/logo/basketball-courts-logo.png") no-repeat center center;
     background-size: cover;
     border-radius: 50%;
     pointer-events: none;

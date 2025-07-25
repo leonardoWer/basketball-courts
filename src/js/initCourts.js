@@ -1,5 +1,5 @@
-const PHOTO_PATH = '../assets/img/';
-const DATA_PATH = '../js/data.json';
+const PHOTO_PATH = 'img/';
+const DATA_PATH = 'src/js/data.json';
 
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -32,7 +32,7 @@ function createCourtTile(court) {
     tile.className = 'bc-tile';
     tile.innerHTML = `
         <div class="bc-img-container">
-            <img src="../assets/img/bc-1.jpg" alt="${court.address}">
+            <img src="${PHOTO_PATH}bc-1.jpg" alt="${court.address}">
     
             <div class="bc-img-content">
                 ${court.type ? `
