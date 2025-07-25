@@ -1,5 +1,5 @@
 const PHOTO_PATH = 'img/';
-const DATA_PATH = 'src/js/data.json';
+const DATA_PATH = 'data/data.json';
 
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -7,15 +7,22 @@ document.addEventListener('DOMContentLoaded', () => {
 })
 
 
-function initCourtsJson() {
-    fetch(DATA_PATH)
-        .then(response => response.json())
-        .then(data => {
-            console.log("data.json успешно загружен: всего", data.spb_courts.length)
+async function initCourtsJson() {
+    try {
+        const response = await fetch(DATA_PATH);
 
-            initCourts(data.spb_courts);
-        })
-        .catch(error => console.log('Ошибка загрузки JSON:', error));
+        if (!response.ok) {
+            throw new Error(`Ошибка HTTP: ${response.status}`);
+        }
+
+        const data = await response.json();
+        console.log("data.json успешно загружен: всего", data.spb_courts.length);
+
+        initCourts(data.spb_courts);
+
+    } catch (error) {
+        console.error('Ошибка загрузки JSON:', error);
+    }
 }
 
 function initCourts(courts) {

@@ -63,7 +63,7 @@ export function initScrollTimeline() {
 
     // Футер
     gsap.from('.footer-bg', {
-        borderRadius: 200,
+        borderRadius: 180,
         duration: 2,
         scrollTrigger: {
             trigger: "footer",
