@@ -156,6 +156,7 @@ footer {
     flex-direction: column;
     margin: 0 8vw;
     justify-content: center;
+    align-items: flex-start;
     gap: 8vw;
     padding: 10vh 0 0 0;
 }
@@ -178,6 +179,13 @@ footer {
     margin: 0 0 1rem 0;
     user-select: none;
 }
+
+.footer-top-line-list {
+    display: flex;
+    flex-direction: column;
+    gap: 0.8rem;
+}
+
 .footer-top-line li {
     text-align: left;
     transition: all 0.5s ease-in-out;
