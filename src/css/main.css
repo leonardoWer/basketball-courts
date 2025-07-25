@@ -18,7 +18,7 @@
 .top-line {
     display: flex;
     align-items: center;
-    gap: 50px;
+    gap: 2rem;
 }
 
 .top-line__left {
@@ -36,22 +36,15 @@
     display: flex;
     justify-content: center;
     flex: 1 1 0;
+    justify-self: center;
 }
 .top-menu {
     background: var(--dark-gray-rgb);
     border-radius: var(--border-radius);
     padding: 16px 12px;
-    transition: all 0.8s;
     opacity: 0;
 }
-.top-menu.active, .top-line__left.active {
-    opacity: 1;
-    animation: topMenuIn 1.2s ease-in-out;
-}
-.top-menu.hidden, .top-line__left.hidden {
-    opacity: 0;
-    animation: topMenuOut 1.2s ease-in-out;
-}
+
 .top-menu ul {
     display: flex;
     gap: 4px
@@ -213,6 +206,5 @@ footer {
     width: inherit;
     overflow: hidden;
     font-size: clamp(2rem, 7vw, 15rem);
-    transform: translateY(calc(clamp(2rem, 7vw, 15rem) / 5));
     color: var(--dark-gray-text);
 }
