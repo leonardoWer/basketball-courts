@@ -9,10 +9,23 @@ function initCustomCursor() {
     customCursor.classList.add('custom-cursor');
     document.body.appendChild(customCursor);
 
+    // Наведение
+    const interactiveElements = document.querySelectorAll('a, button, img, li');
+    const addPointerHoverClass = () => {
+        if (customCursor) {
+            customCursor.classList.add('pointer-hover');
+        }
+    };
+    const removePointerHoverClass = () => {
+        if (customCursor) {
+            customCursor.classList.remove('pointer-hover');
+        }
+    };
+
     let mouseMoving = false;
     let timeoutId;
 
-    // Функции для мыши
+    // Клик
     function moveCursor(event) {
         customCursor.style.left = event.clientX + 'px';
         customCursor.style.top = event.clientY + 'px';
@@ -30,12 +43,10 @@ function initCustomCursor() {
             customCursor.classList.add('idle');
         }, 100);
     }
-
     function addClickEffect() {
         customCursor.classList.remove('idle');
         customCursor.classList.add('clicked');
     }
-
     function removeClickEffect() {
         customCursor.classList.remove('clicked');
         // Если мышь не движется, добавим класс idle сразу после отпускания кнопки
@@ -48,6 +59,10 @@ function initCustomCursor() {
     document.addEventListener('mousemove', moveCursor);
     document.addEventListener('mousedown', addClickEffect);
     document.addEventListener('mouseup', removeClickEffect);
+    interactiveElements.forEach(element => {
+        element.addEventListener('mouseover', addPointerHoverClass);
+        element.addEventListener('mouseout', removePointerHoverClass);
+    });
 }
 
 

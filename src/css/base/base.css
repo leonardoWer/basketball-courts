@@ -18,7 +18,7 @@ html {
     width: 50px;
     height: 50px;
     opacity: 0.9;
-    background: url("../../../public/img/logo/basketball-courts-logo.png") no-repeat center center;
+    background: url("/img/logo/basketball-courts-logo.png") no-repeat center center;
     background-size: cover;
     border-radius: 50%;
     pointer-events: none;
@@ -37,11 +37,18 @@ html {
     animation: jumpBall 0.5s ease-in-out infinite;
     opacity: 0.99;
 }
+.custom-cursor.pointer-hover {
+    width: 80px;
+    height: 80px;
+    background: transparent;
+    border: 1px solid var(--orange);
+    animation: none;
+    opacity: 1;
+    transform: translate(-50%, -50%) rotate(0deg); /* Убедимся, что при hover вращение тоже сброшено */
+}
 
 /* Выделение мыши */
 ::selection {
-    /*background-color: var(--dark-gray-rgb);*/
-    /*color: var(--white-gray-text);*/
     background-color: var(--light-orange);
     color: var(--dark-gray-text);
 }
