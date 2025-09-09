@@ -8,6 +8,23 @@ html {
     scroll-behavior: smooth;
 }
 
+/* Scrollbar */
+html {
+    scrollbar-gutter: stable;
+}
+&::-webkit-scrollbar {
+    background-color: var(--gray-background);
+    width: 8px;
+}
+&::-webkit-scrollbar-thumb {
+    background-color: var(--light-gray-text);
+    border-radius: 4px;
+    background-clip: content-box;
+}
+&::-webkit-scrollbar-thumb:hover {
+    background-color: var(--orange);
+}
+
 .left-i {
     margin-right: 4px;
     scale: 0.9;
