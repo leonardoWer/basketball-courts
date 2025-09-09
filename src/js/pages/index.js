@@ -1,6 +1,14 @@
 import {initHeaderAnimation} from "s/js/gsap/headerAnimation.js";
 import {MouseTargetCard} from "s/components/MouseTargetCard/MouseTargetCard.js";
 import {initScrollTimeline} from "s/js/gsap/initScrollTimeline.js";
+import {createTopMenu} from "s/components/TopMenu/TopMenu.js";
+
+// Верхнее меню
+const header = document.querySelector('header');
+if (header) {
+    header.appendChild(createTopMenu());
+}
+
 
 // Анимации при скролле
 function initObservingAnimations() {
@@ -50,7 +58,6 @@ function handleIntersection(entry, observer) {
         observer.unobserve(container);
     }
 }
-
 
 // Движение картинки за мышкой
 function initRotationElementMouseMoving() {

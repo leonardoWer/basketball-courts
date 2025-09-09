@@ -2,7 +2,7 @@ import {defineConfig} from 'vite';
 import {resolve} from 'path';
 
 export default defineConfig({
-    root: './', // Корневая директория проекта
+    root: './',
     resolve: {
         alias: {
             's': resolve(__dirname, './src'),
@@ -10,4 +10,11 @@ export default defineConfig({
         },
     },
     base: '/basketball-courts/',
+    build: {
+        input: {
+            // Определяем точки входа
+            main: resolve(__dirname, 'index.html'),
+            map: resolve(__dirname, 'map.html'),
+        },
+    }
 });
