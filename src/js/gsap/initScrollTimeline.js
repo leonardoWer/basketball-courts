@@ -3,9 +3,7 @@ import {ScrollTrigger} from "gsap/ScrollTrigger";
 import {TextPlugin} from "gsap/TextPlugin";
 import {SplitText} from "gsap/SplitText";
 
-gsap.registerPlugin(ScrollTrigger);
-gsap.registerPlugin(TextPlugin);
-gsap.registerPlugin(SplitText);
+gsap.registerPlugin(ScrollTrigger, TextPlugin, SplitText);
 
 export function initScrollTimeline() {
 
@@ -47,7 +45,7 @@ export function initScrollTimeline() {
 
     // Заполняющийся текст
     const textEl = document.querySelector('.bcc-container__right-bc-text');
-    const splitText = new SplitText(textEl, { type: "chars" }); // Разбиваем текст на символы
+    const splitText = new SplitText(textEl, {type: "chars"}); // Разбиваем текст на символы
     const chars = splitText.chars; // Получаем массив символов
 
     gsap.from(chars, {
@@ -59,43 +57,5 @@ export function initScrollTimeline() {
             end: "bottom 60%",
             scrub: true,
         }
-    });
-
-    // Текст Площадки
-    gsap.to('.basketball-courts-title', {
-        duration: 2,
-        text: "Площадки",
-        scrollTrigger: {
-            trigger: '.basketball-courts-title',
-            start: "top 90%",
-            end: "bottom 40%",
-            scrub: true,
-        }
-    })
-
-    // Футер
-    gsap.from('.footer-bg', {
-        borderRadius: 180,
-        duration: 2,
-        scrollTrigger: {
-            trigger: "footer",
-            start: "top 90%",
-            end: "bottom 20%",
-            scrub: true,
-        }
-    })
-
-    gsap.fromTo(".footer-bg-text", {
-        yPercent: -200, // Двигаем текст вверх на 100% его высоты
-        opacity: 0.8,
-    }, {
-        yPercent: 120,
-        opacity: 1,
-        scrollTrigger: {
-            trigger: ".footer-bg-text",
-            start: "bottom bottom",
-            end: "bottom 20%",
-            scrub: true,
-        },
     });
 }

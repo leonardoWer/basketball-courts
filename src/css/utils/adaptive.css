@@ -51,10 +51,6 @@
     .tile-type-text {
         font-size: 0.8rem;
     }
-
-    .footer-top-line {
-        flex-direction: row;
-    }
 }
 
 /* Для очень больших экранов (большие десктопы) */

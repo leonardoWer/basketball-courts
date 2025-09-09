@@ -1,13 +1,17 @@
+import {createTopMenu} from "s/components/TopMenu/TopMenu.js";
+import {createFooter} from "s/components/Footer/Footer.js";
 import {initHeaderAnimation} from "s/js/gsap/headerAnimation.js";
 import {MouseTargetCard} from "s/components/MouseTargetCard/MouseTargetCard.js";
 import {initScrollTimeline} from "s/js/gsap/initScrollTimeline.js";
-import {createTopMenu} from "s/components/TopMenu/TopMenu.js";
 
-// Верхнее меню
+// Наполняем страницу
 const header = document.querySelector('header');
 if (header) {
     header.appendChild(createTopMenu());
 }
+
+const footer = document.querySelector('footer');
+footer.appendChild(createFooter());
 
 
 // Анимации при скролле
@@ -21,7 +25,6 @@ function initObservingAnimations() {
         observer.observe(container);
     });
 }
-
 function handleIntersection(entry, observer) {
     if (entry.isIntersecting) {
         const container = entry.target;
