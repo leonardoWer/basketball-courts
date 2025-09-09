@@ -30,6 +30,39 @@ export function initMap(objects) {
     return map;
 }
 
-function addPlacemark (object, map) {
+const customPlacemarkLayout = ymaps.templateLayoutFactory.createClass(
+    `
+    <div class="custom-placemark">
+        <div class="custom-placemark__image-container">
+            <img src="{{ properties.iconSrc }}" class="custom-placemark__image" alt="placemark-icon">
+        </div>
+        
+        <div class="custom-placemark__content">
+            <h4 class="custom-placemark__title">{{ properties.title }}</h4>
+        </div>
+    </div>
+    `,
+    {
+        build: function() {
+            this.constructor.superclass.build.call(this);
 
+            // Пример: навешиваем обработчик на сам макет
+            // this.options.get('content').events.add('click', () => {
+            //     alert('Клик по макету!');
+            // });
+        }
+    }
+);
+function addPlacemark (object, map) {
+    const placemark = new ymaps.Placemark(object.geolocation, {
+        title: object.title,
+        iconSrc: "img/" + object.cover_photo || 'img/bc-1.jpg',
+
+        balloonContent: object.balloonContent || 'Информация отсутствует',
+    }, {
+        iconLayout: customPlacemarkLayout,
+    });
+
+    // Добавляем метку на карту
+    map.geoObjects.add(placemark);
 }

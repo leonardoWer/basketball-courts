@@ -1,6 +1,7 @@
 import {createTopMenu} from "s/components/TopMenu/TopMenu.js";
 import {createFooter} from "s/components/Footer/Footer.js";
 import {initMap} from "s/js/init/initMap.js";
+import {fetchJson} from "s/js/utils/fetchJson.js";
 
 // Элементы
 const header = document.querySelector('header');
@@ -13,5 +14,18 @@ if (footer) {
     footer.appendChild(createFooter());
 }
 
+// Площадки
+async function initCourtsJson() {
+    try {
+        const jsonData = await fetchJson();
+
+        if (jsonData && jsonData.spb_courts) {
+            initMap(jsonData.spb_courts);
+        }
+    } catch (error) {
+        console.error('Ошибка загрузки JSON:', error);
+    }
+}
+
 // Карта
-initMap();
+document.addEventListener('DOMContentLoaded', initCourtsJson);

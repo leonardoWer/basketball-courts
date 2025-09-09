@@ -2,27 +2,27 @@
   "spb_courts" : [
     {
       "id" : 1,
-      "address" : "Парк Город Мастеров",
-      "geolocation" : 123.123,
+      "title" : "Парк Город Мастеров",
+      "description" : "",
+      "geolocation" : [60.041398, 30.210308],
       "cover_photo" : "bc-1.jpg",
       "photos" : [
         "123.png",
         "1234.png"
       ],
-      "description" : "",
       "type" : "открытая",
       "cost" : "Бесплатно"
     },
     {
       "id" : 2,
-      "address" : "Школа 599(600к2)",
-      "geolocation" : 123.124,
+      "title" : "Школа 599(600к2)",
+      "description" : "Родная школа",
+      "geolocation" : [59.987886, 30.218514],
       "cover_photo" : "bc-1.jpg",
       "photos" : [
         "123.png",
         "1234.png"
       ],
-      "description" : "Родная школа",
       "type" : "открытая",
       "cost" : "Бесплатно"
     }
