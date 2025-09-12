@@ -10,7 +10,7 @@ function initCustomCursor() {
     document.body.appendChild(customCursor);
 
     // Наведение
-    const interactiveElements = document.querySelectorAll('a, button, img, li');
+    const interactiveElements = document.querySelectorAll('a, button, img, li, #map');
     const addPointerHoverClass = () => {
         if (customCursor) {
             customCursor.classList.add('pointer-hover');

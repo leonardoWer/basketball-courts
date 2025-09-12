@@ -30,39 +30,118 @@ export function initMap(objects) {
     return map;
 }
 
-const customPlacemarkLayout = ymaps.templateLayoutFactory.createClass(
-    `
-    <div class="custom-placemark">
-        <div class="custom-placemark__image-container">
-            <img src="{{ properties.iconSrc }}" class="custom-placemark__image" alt="placemark-icon">
-        </div>
-        
-        <div class="custom-placemark__content">
-            <h4 class="custom-placemark__title">{{ properties.title }}</h4>
-        </div>
-    </div>
-    `,
-    {
-        build: function() {
-            this.constructor.superclass.build.call(this);
-
-            // Пример: навешиваем обработчик на сам макет
-            // this.options.get('content').events.add('click', () => {
-            //     alert('Клик по макету!');
-            // });
-        }
-    }
-);
 function addPlacemark (object, map) {
+
+    // Кастомные модели
+    const customPlacemarkLayout = ymaps.templateLayoutFactory.createClass(`
+        <div class="custom-placemark">
+            <div class="custom-placemark__image-container">
+                <img src="{{ properties.iconSrc }}" class="custom-placemark__image" alt="placemark-icon">
+            </div>
+            
+            <div class="custom-placemark__content">
+                <h4 class="custom-placemark__title">{{ properties.title }}</h4>
+            </div>
+            
+            <div class="custom-placemark__balloon" style="display: none;">
+                <div class="custom-placemark__balloon-content">
+                    {{ properties.balloonContent }}
+                </div>
+            </div>
+        </div>
+    `);
+
+    const customBalloonLayout = ymaps.templateLayoutFactory.createClass(`
+         <div class="custom-balloon">
+            <div class="custom-balloon__content">
+                 <div class="custom-balloon__header">
+                    <h2 class="cb-header__title">{{ properties.title }}</h2>
+                    <p class="cb-header__type">Баскетбольная площадка</p>
+                 </div>
+                 <div class="custom-balloon__body">
+                    {% if properties.balloonContentBody.address %}
+                    <h4 class="cb-body__title">{{ properties.balloonContentBody.address }}</h4>
+                    <ul class="cb-body__metro-list">
+                        {% for station in properties.balloonContentBody.metroStations %}
+                            <li class="cb-body-metro-list__item">
+                                <i class="metro-icon"></i>
+                                {{ station.name }}
+                            </li>
+                        {% endfor %}
+                    </ul>
+                    {% else %}
+                        <h4 class="cb-body__title">Рядом нет станций метро</h4>
+                    {% endif %}
+                 </div>
+            </div>
+            <div class="custom-balloon__close">
+                <i class="fa fa-close custom-balloon__close-button"></i>
+            </div>
+         </div>
+    `);
+
     const placemark = new ymaps.Placemark(object.geolocation, {
         title: object.title,
         iconSrc: "img/" + object.cover_photo || 'img/bc-1.jpg',
-
-        balloonContent: object.balloonContent || 'Информация отсутствует',
     }, {
         iconLayout: customPlacemarkLayout,
+        iconShape: {type: 'Rectangle', coordinates: [[0, 0], [90, 120]]},
+        cursor: "pointer",
+        hideIconOnBalloonOpen: false,
+        balloonLayout: customBalloonLayout,
+        balloonOffset: [100, 0]
+    });
+
+    placemark.events.add("click", async function (e) {
+        const target = e.get("target");
+
+        // Получаем данные об адресе и метро
+        const balloonContentBody = await getNearestMetro(object.geolocation);
+        target.properties.set("balloonContentBody", balloonContentBody);
     });
 
     // Добавляем метку на карту
     map.geoObjects.add(placemark);
+}
+
+// Функция для получения ближайшего метро
+async function getNearestMetro(coords) {
+    return new Promise((resolve, reject) => {
+        // Получаем адрес
+        ymaps.geocode(coords)
+            .then((res) => {
+                let address = "";
+                if (res.geoObjects.getLength() > 0) {
+                    address = res.geoObjects.get(0).getAddressLine() || "Адрес не найден";
+
+                    // Затем ищем ближайшие станции метро, используя полученный адрес
+                    ymaps.geocode(coords, {
+                        kind: "metro",
+                        results: 3,
+                    })
+                        .then((res) => {
+                            const metroStations = [];
+                            for (let i = 0; i < res.geoObjects.getLength(); i++) {
+                                const geoObject = res.geoObjects.get(i);
+
+                                metroStations.push({
+                                    name: geoObject.getPremise().replace("метро ", "") || "Неизвестная станция",
+                                });
+                            }
+                            resolve({ address, metroStations });
+                        })
+                        .catch((err) => {
+                            console.error("Ошибка при поиске метро:", err);
+                            resolve({ address: "Не удалось определить метро", metroStations: [] }); // Return found address even if getting metro fails
+                        });
+                } else {
+                    // Если не удалось определить адрес по координатам
+                    resolve({ address: "Адрес не найден", metroStations: [] });
+                }
+            })
+            .catch((err) => {
+                console.error("Ошибка при геокодировании координат:", err);
+                reject(err);
+            });
+    });
 }

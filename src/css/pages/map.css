@@ -13,17 +13,17 @@
 
 /* custom map icon */
 .custom-placemark {
-    width: 100px;
-    min-height: 80px;
+    width: 90px;
+    height: 120px;
     background: var(--white-background);
-    padding: 1em;
+    padding: 1em 0.6em;
     border-radius: var(--border-radius);
     overflow: hidden;
     display: flex;
     align-items: center;
     justify-content: center;
     flex-direction: column;
-    gap: 0.4em;
+    gap: 0.5em;
 }
 .custom-placemark__image-container {
     width: 95%;
@@ -38,9 +38,57 @@
 }
 .custom-placemark__title {
     font-family: "Inter_Medium", sans-serif;
-    font-size: 0.8rem;
+    font-size: 0.9rem;
     text-align: center;
 }
+
+.custom-balloon {
+    background: var(--white-background);
+    width: fit-content;
+    min-height: 60px;
+    min-width: 220px;
+    padding: 1em;
+    overflow: hidden;
+    display: flex;
+    justify-content: space-between;
+    gap: 1em;
+    border-radius: var(--border-radius);
+}
+.custom-balloon__content {
+    display: flex;
+    flex-direction: column;
+}
+.cb-header__title {
+    font-family: "Inter_Medium", sans-serif;
+    font-size: 1.4rem;
+}
+.cb-header__type {
+    color: var(--dark-gray-text);
+    margin-top: 0.4em;
+}
+.custom-balloon__body {
+    margin-top: 0.6em;
+}
+.cb-body__title {
+    font-size: 1.2rem;
+}
+.cb-body__metro-list {
+    margin-top: 0.4em;
+}
+.cb-body-metro-list__item {
+    white-space: nowrap;
+    display: flex;
+    gap: 0.6em;
+}
+.metro-icon {
+    width: 16px;
+    height: 16px;
+    background-image: url(https://upload.wikimedia.org/wikipedia/commons/thumb/0/07/Spb_metro_logo.svg/200px-Spb_metro_logo.svg.png?20200527182910);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+}
+
 
 footer {
     margin-top: 10vh;

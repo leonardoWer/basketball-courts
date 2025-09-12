@@ -20,11 +20,15 @@ async function initCourtsJson() {
         const jsonData = await fetchJson();
 
         if (jsonData && jsonData.spb_courts) {
-            initMap(jsonData.spb_courts);
+            initMapPage(jsonData.spb_courts);
         }
     } catch (error) {
         console.error('Ошибка загрузки JSON:', error);
     }
+}
+
+function initMapPage(data) {
+    ymaps.ready(initMap(data))
 }
 
 // Карта
