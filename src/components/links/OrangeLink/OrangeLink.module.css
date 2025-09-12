@@ -1,0 +1,8 @@
+.orangeLink {
+    background: var(--orange__sunrize-gradient-diag);
+    padding: 0.8em 1.2em;
+    border-radius: var(--two-border-radius);
+}
+.orangeLink:active {
+    opacity: 0.9;
+}
