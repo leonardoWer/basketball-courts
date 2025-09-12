@@ -1,3 +1,5 @@
+import {OrangeLink} from "s/components/links/OrangeLink/OrangeLink.js";
+
 const mapConfig = {
     center: [59.939, 30.315],
     zoom: 12,
@@ -73,12 +75,34 @@ function addPlacemark (object, map) {
                         <h4 class="cb-body__title">Рядом нет станций метро</h4>
                     {% endif %}
                  </div>
+                 <div class="custom-balloon__footer">
+                    ${OrangeLink({title: "Как добраться", href: ""})}
+                 </div>
             </div>
-            <div class="custom-balloon__close">
+            <div class="custom-balloon__close" id="closeBalloon">
                 <i class="fa fa-close custom-balloon__close-button"></i>
             </div>
          </div>
-    `);
+    `, {
+        build: function () {
+            this.constructor.superclass.build.call(this);
+            this._closeButton = this.getElement().querySelector('#closeBalloon');
+            if (this._closeButton) {
+                this._closeButton.addEventListener('click', this.onCloseClick.bind(this));
+            }
+        },
+        clear: function () {
+            this.constructor.superclass.clear.call(this);
+            if (this._closeButton) {
+                this._closeButton.removeEventListener('click', this.onCloseClick.bind(this));
+                this._closeButton = null; // Важно: очищаем ссылку
+            }
+        },
+        onCloseClick: function (e) {
+            e.preventDefault();
+            this.events.fire('userclose');
+        }
+    });
 
     const placemark = new ymaps.Placemark(object.geolocation, {
         title: object.title,

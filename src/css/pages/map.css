@@ -47,12 +47,15 @@
     width: fit-content;
     min-height: 60px;
     min-width: 220px;
-    padding: 1em;
+    padding: 1em 1em 1.2em 1em;
     overflow: hidden;
     display: flex;
     justify-content: space-between;
     gap: 1em;
     border-radius: var(--border-radius);
+}
+.custom-balloon__close {
+    cursor: pointer;
 }
 .custom-balloon__content {
     display: flex;
@@ -87,6 +90,10 @@
     background-repeat: no-repeat;
     background-position: center;
     background-size: contain;
+}
+.custom-balloon__footer {
+    padding: 0.4em 0;
+    margin-top: 1.2em;
 }
 
 
