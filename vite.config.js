@@ -11,10 +11,12 @@ export default defineConfig({
     },
     base: '/basketball-courts/',
     build: {
-        input: {
-            // Определяем точки входа
-            main: resolve(__dirname, 'index.html'),
-            map: resolve(__dirname, 'map.html'),
-        },
+        rollupOptions: {
+            input: {
+                // Определяем точки входа
+                main: resolve(__dirname, 'index.html'),
+                map: resolve(__dirname, 'map.html'),
+            },
+        }
     }
 });

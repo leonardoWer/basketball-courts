@@ -1,7 +1,8 @@
 import {createTopMenu} from "s/components/TopMenu/TopMenu.js";
 import {createFooter} from "s/components/Footer/Footer.js";
-import {initMap} from "s/js/init/initMap.js";
+
 import {fetchJson} from "s/js/utils/fetchJson.js";
+import {initMap} from "s/js/init/initMap.js";
 
 // Элементы
 const header = document.querySelector('header');
