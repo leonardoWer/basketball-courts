@@ -76,7 +76,7 @@ function addPlacemark (object, map) {
                     {% endif %}
                  </div>
                  <div class="custom-balloon__footer">
-                    ${OrangeLink({title: "Как добраться", href: ""})}
+                    ${OrangeLink({title: "Как добраться", href: "https://yandex.ru/maps/?rtext=~" + `{{ properties.latitude }}` + "," + `{{ properties.longitude }}` })}
                  </div>
             </div>
             <div class="custom-balloon__close" id="closeBalloon">
@@ -106,6 +106,8 @@ function addPlacemark (object, map) {
 
     const placemark = new ymaps.Placemark(object.geolocation, {
         title: object.title,
+        latitude: object.geolocation[0] ?? "",
+        longitude: object.geolocation[1] ?? "",
         iconSrc: "img/" + object.cover_photo || 'img/bc-1.jpg',
     }, {
         iconLayout: customPlacemarkLayout,
