@@ -10,12 +10,10 @@ export function initScrollTimeline() {
     // Всплывающие контейнеры
     const containers = document.querySelectorAll('.reveal-container');
     containers.forEach(container => {
-        // Создаем timeline для каждой анимации
         const tl = gsap.timeline({
-            paused: true // Изначально ставим timeline на паузу
+            paused: true
         });
 
-        // Определяем анимацию "всплытия" (появление)
         tl.fromTo(
             container,
             {
@@ -29,33 +27,34 @@ export function initScrollTimeline() {
                 ease: "power2.out",
             }
         );
-
-        // Создаем ScrollTrigger для запуска анимации при входе в область видимости
+        
         ScrollTrigger.create({
             trigger: container,
             start: "top 90%",
             onEnter: () => {
-                tl.play(); // Запускаем анимацию при входе
+                tl.play();
             },
             onLeaveBack: () => {
-                tl.reverse(); // Запускаем анимацию в обратном направлении при выходе
+                tl.reverse();
             },
         });
     });
 
     // Заполняющийся текст
     const textEl = document.querySelector('.bcc-container__right-bc-text');
-    const splitText = new SplitText(textEl, {type: "chars"}); // Разбиваем текст на символы
-    const chars = splitText.chars; // Получаем массив символов
+    document.fonts.ready.then(() => {
+        const splitText = new SplitText(textEl, {type: "chars"});
 
-    gsap.from(chars, {
-        color: "var(--gray-text)", // Конечный цвет
-        stagger: 0.1, // Задержка между символами
-        scrollTrigger: {
-            trigger: textEl,
-            start: "top 100%",
-            end: "bottom 60%",
-            scrub: true,
-        }
-    });
+        gsap.from(splitText.chars, {
+            color: "var(--gray-text)",
+            stagger: 0.1,
+            scrollTrigger: {
+                trigger: textEl,
+                start: "top 100%",
+                end: "bottom 60%",
+                scrub: true,
+            }
+        });
+    })
+
 }

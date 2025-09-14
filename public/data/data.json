@@ -1,11 +1,11 @@
 {
   "spb_courts" : [
     {
-      "id" : 1,
+      "id": 1,
       "title" : "Парк Город Мастеров",
       "description" : "",
       "geolocation" : [60.041398, 30.210308],
-      "cover_photo" : "bc-1.jpg",
+      "cover_photo" : "bc-temp.png",
       "photos" : [
         "123.png",
         "1234.png"
@@ -14,11 +14,50 @@
       "cost" : "Бесплатно"
     },
     {
-      "id" : 2,
+      "id": 2,
       "title" : "Школа 599(600к2)",
       "description" : "Родная школа",
       "geolocation" : [59.987886, 30.218514],
-      "cover_photo" : "bc-1.jpg",
+      "cover_photo" : "bc-temp.png",
+      "photos" : [
+        "123.png",
+        "1234.png"
+      ],
+      "type" : "открытая",
+      "cost" : "Бесплатно"
+    },
+    {
+      "id": 3,
+      "title" : "У Беговой",
+      "description" : "",
+      "geolocation" : [59.987053, 30.210397],
+      "cover_photo" : "bc-temp.png",
+      "photos" : [
+        "123.png",
+        "1234.png"
+      ],
+      "type" : "открытая",
+      "cost" : "Бесплатно"
+    },
+    {
+      "id": 4,
+      "title" : "По дороге к коменде",
+      "description" : "",
+      "geolocation" : [60.018533, 30.245555],
+      "cover_photo" : "bc-temp.png",
+      "photos" : [
+        "123.png",
+        "1234.png"
+      ],
+      "type" : "открытая",
+      "cost" : "Бесплатно"
+    },
+    {
+      "id": 5,
+      "title" : "Новая Голландия",
+      "description" : "",
+      "geolocation" : [59.930380, 30.290778],
+      "cover_photo" : "bc-temp.png",
       "photos" : [
         "123.png",
         "1234.png"
