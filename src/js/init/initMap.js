@@ -1,32 +1,32 @@
 import {OrangeLink} from "s/components/links/OrangeLink/OrangeLink.js";
 
 const mapConfig = {
-    center: [59.939, 30.315],
-    zoom: 12,
+    spbCenter: [59.939, 30.315],
+    defaultZoom: 12,
     controls: ['zoomControl', 'fullscreenControl'],
 }
 
-export function initMap(objects) {
+export function initMap({placemarkData, mapCenter, mapZoom}) {
     const mapContainer = document.getElementById('map');
 
     // errors
     if (!mapContainer) {
         console.error("Элемент с ID 'map' не найден. Невозможно инициализировать карту.");
     }
-    if (!objects || objects.length === 0) {
+    if (!placemarkData || placemarkData.length === 0) {
         console.warn("Список объектов пуст или не найден. Объекты не будут загружены");
     }
 
     // init
     const map = new ymaps.Map(mapContainer, {
-        center: mapConfig.center,
-        zoom: mapConfig.zoom,
+        center: mapCenter ?? mapConfig.spbCenter,
+        zoom: mapZoom ?? mapConfig.defaultZoom,
         controls: mapConfig.controls,
     })
 
     // objects
-    if (objects && objects.length > 0) {
-        objects.forEach(object => {addPlacemark(object, map)})
+    if (placemarkData && placemarkData.length > 0) {
+        placemarkData.forEach(object => {addPlacemark(object, map)})
     }
 
     return map;
